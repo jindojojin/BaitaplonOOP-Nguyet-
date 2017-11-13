@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class AnalysisData {
-    public String simple_fix(String str){  //ham cat bo ki tu thua  "{"   ","    ";"
+    //ham cat bo ki tu thua  "{"   ","    ";"
+    public String simple_fix(String str) {
         if (str.endsWith("{") ||
                 str.endsWith(";") ||
                 str.endsWith(",") ) {
@@ -10,7 +11,8 @@ public class AnalysisData {
         return str;
     }
 
-    public String advance_fix(String str){  // ham lay ra ten cua method
+    // ham lay ra ten cua method
+    public String advance_fix(String str) {
         int pos = str.indexOf("(");
         if(pos>0) return str.substring(0,pos);
         return str;

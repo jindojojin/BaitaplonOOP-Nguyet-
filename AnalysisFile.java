@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 
 public class AnalysisFile {
-    public static String fix_Line(String str){   //xoa bo phan thua trong 1 dong
+    //xoa bo phan thua trong 1 dong
+    public static String fix_Line(String str) {
 
         int pos, pos2;
         if(str.startsWith("//")) return null;// bat dua bang // thi tra ve null. tuc doan sau bo.
