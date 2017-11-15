@@ -15,7 +15,7 @@ public class AnalysisClass {
     public static String fix_Line(String str) {
 
         int pos, pos2;
-        if(str.startsWith("//")) return null;// bat dua bang // thi tra ve null. tuc doan sau bo.
+        if(str.startsWith("//")) return null;// bat dau bang "//" thi la comment => tra ve null.
 
         while((pos = str.indexOf("/*")) >0){// vi tri dau xuat hien cua /*
             pos2= str.indexOf("*/");
@@ -29,11 +29,11 @@ public class AnalysisClass {
 
     public Class analysis(File file){
 
-        ClassInfor class_Infor_Infor_ = null;
+        ClassInfor classInfor = null;
         ArrayList<Method> methods = new ArrayList<>();
         ArrayList<Attribute> attributes = new ArrayList<>();
 
-        AnalysisData dataTo = new AnalysisData();
+        AnalysisString dataTo = new AnalysisString();
 
         try{
 
@@ -42,8 +42,8 @@ public class AnalysisClass {
                 String str = fix_Line(sc.nextLine().trim());
 //                System.out.println(str);
                 if (str == null) continue;
-                if(str.indexOf("class")>0 && str.endsWith("{")) {
-                    class_Infor_Infor_ = dataTo.AnalysisClass(str);
+                if(str.indexOf(" class ")>0) {
+                    classInfor = dataTo.analysisClassInfor(str);
                     continue;
                 }
 
@@ -67,9 +67,7 @@ public class AnalysisClass {
             e.printStackTrace();
         }
 
-        if(class_Infor_Infor_ ==null) return null;
-
-        return new Class(class_Infor_Infor_,attributes,methods);
+        return new Class(classInfor,attributes,methods);
 
     }
 

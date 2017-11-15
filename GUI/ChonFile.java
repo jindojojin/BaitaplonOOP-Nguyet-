@@ -4,9 +4,14 @@
 
 package GUI;
 
+import Infor.Class;
+import Xuli.AnalysisClass;
+import Xuli.AnalysisFolder;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
@@ -16,16 +21,19 @@ import javax.swing.filechooser.FileSystemView;
  * @author Linh Tran Quang
  */
 public class ChonFile extends JFrame {
+    ArrayList<Class> list_class = new ArrayList<>(); // danh sach de luu cac class sau khi da phan tich
     public File folder;
     public boolean ok_button_press;
     public ChonFile() {
         initComponents();
         setVisible(true);
+        setResizable(false);
         ok_button_press = false;
+        thong_tin.setText("Nhan nut \"CHON DUONG DAN\" de mo thu muc chua chuong trinh can phan tich");
     }
 
-    public File getFolder() {
-        return this.folder;
+    public ArrayList<Class> getList_class() {
+        return list_class;
     }
 
     private void Click_ChonDuongDan(ActionEvent e) {
@@ -53,19 +61,40 @@ public class ChonFile extends JFrame {
         if(folder == null){
             JOptionPane.showMessageDialog(null,"Hay chon duong dan truoc","ERROR!",1);
         }else {
-            this.ok_button_press = true;
-            System.out.println("da bam ok");
-            setVisible(false);
+            AnalysisFolder anf = new AnalysisFolder();
+            anf.lay_File_Java(folder);
+            ArrayList<File> list_java_file = anf.getList_class(); //danh sach cac file co duoi .java
+            if(list_java_file.size() == 0){
+                JOptionPane.showMessageDialog(null,"Thu muc khong chua file java nao","Error!!",1);
+            }else {
+                this.ok_button_press = true;
+                System.out.println("da bam ok");
+                phan_tich_tung_file(list_java_file);
+                setVisible(false);
+
+            }
         }
+    }
+    //        phan tich cac file .java
+    private void phan_tich_tung_file(ArrayList<File> list_java_file) {
+        AnalysisClass phan_tich_file_java = new AnalysisClass();
+        for (File file : list_java_file) {
+            list_class.add(phan_tich_file_java.analysis(file));
+        }
+    }
+
+    private void Click_help(ActionEvent e) {
+        // TODO add your code here
+        JOptionPane.showMessageDialog(null,"Chua hoan thien chuc nang nay","Error!!",1);
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Linh Tran Quang
         contentPanel = new JPanel();
-        button1 = new JButton();
         thong_tin = new JLabel();
         buttonBar = new JPanel();
+        button1 = new JButton();
         okButton = new JButton();
         cancelButton = new JButton();
         helpButton = new JButton();
@@ -77,31 +106,19 @@ public class ChonFile extends JFrame {
 
         //======== contentPanel ========
         {
-            //---- button1 ----
-            button1.setText("CHON DUONG DAN");
-            button1.addActionListener(e -> Click_ChonDuongDan(e));
 
             GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
             contentPanel.setLayout(contentPanelLayout);
             contentPanelLayout.setHorizontalGroup(
                 contentPanelLayout.createParallelGroup()
                     .addGroup(contentPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(contentPanelLayout.createParallelGroup()
-                            .addComponent(thong_tin, GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
-                            .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
-                                .addGap(0, 104, Short.MAX_VALUE)
-                                .addComponent(button1, GroupLayout.PREFERRED_SIZE, 258, GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
+                        .addGap(21, 21, 21)
+                        .addComponent(thong_tin, GroupLayout.PREFERRED_SIZE, 590, GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(31, Short.MAX_VALUE))
             );
             contentPanelLayout.setVerticalGroup(
                 contentPanelLayout.createParallelGroup()
-                    .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(thong_tin, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                        .addComponent(button1)
-                        .addGap(17, 17, 17))
+                    .addComponent(thong_tin, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
             );
         }
         contentPane.add(contentPanel, BorderLayout.WEST);
@@ -113,25 +130,33 @@ public class ChonFile extends JFrame {
             ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 85, 80};
             ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0, 0.0};
 
+            //---- button1 ----
+            button1.setText("CHON DUONG DAN");
+            button1.addActionListener(e -> Click_ChonDuongDan(e));
+            buttonBar.add(button1, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
+                GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                new Insets(0, 0, 5, 5), 0, 0));
+
             //---- okButton ----
             okButton.setText("OK");
             okButton.addActionListener(e -> Click_OK(e));
-            buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+            buttonBar.add(okButton, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
                 GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                new Insets(0, 0, 0, 5), 0, 0));
+                new Insets(0, 0, 5, 5), 0, 0));
 
             //---- cancelButton ----
             cancelButton.setText("Cancel");
             cancelButton.addActionListener(e -> Click_cancel(e));
-            buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+            buttonBar.add(cancelButton, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
                 GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                new Insets(0, 0, 0, 5), 0, 0));
+                new Insets(0, 0, 5, 5), 0, 0));
 
             //---- helpButton ----
             helpButton.setText("Help");
-            buttonBar.add(helpButton, new GridBagConstraints(3, 0, 1, 1, 0.0, 0.0,
+            helpButton.addActionListener(e -> Click_help(e));
+            buttonBar.add(helpButton, new GridBagConstraints(3, 1, 1, 1, 0.0, 0.0,
                 GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                new Insets(0, 0, 0, 0), 0, 0));
+                new Insets(0, 0, 5, 0), 0, 0));
         }
         contentPane.add(buttonBar, BorderLayout.SOUTH);
         pack();
@@ -142,9 +167,9 @@ public class ChonFile extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Linh Tran Quang
     private JPanel contentPanel;
-    private JButton button1;
     private JLabel thong_tin;
     private JPanel buttonBar;
+    private JButton button1;
     private JButton okButton;
     private JButton cancelButton;
     private JButton helpButton;

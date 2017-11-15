@@ -6,7 +6,7 @@ import Infor.Method;
 
 import java.util.ArrayList;
 
-public class AnalysisData {
+public class AnalysisString {
     //ham cat bo ki tu thua  "{"   ","    ";"
     public String simple_fix(String str) {
         if (str.endsWith("{") ||
@@ -25,9 +25,8 @@ public class AnalysisData {
 
     }
 
-    public ClassInfor AnalysisClass(String str){   // phan tich dong chua class
+    public ClassInfor analysisClassInfor(String str){   // phan tich dong chua class
         String[] list = str.split(" ");// cat xau ra cac tu boi dau cach
-
         String access_Modify = list[0];
         String name = simple_fix(list[2]);
         if(list.length <= 4) {      // truong hop khong extends va khong implements
