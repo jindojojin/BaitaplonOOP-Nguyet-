@@ -1,27 +1,25 @@
-package Xuli;
-
-import Xuli.Method;
+package Infor;
 
 import java.util.ArrayList;
 
 /**
  * Created by DELL on 11/7/2017.
  */
-public class File_ {
-    Class class_;
+public class Class {
+    ClassInfor class_Infor_;
     ArrayList<Attribute> attribute;
     ArrayList<Method> methods;
 
-    public File_(Class class_, ArrayList<Attribute> attribute, ArrayList<Method> methods) {
-        this.class_ = class_;
+    public Class(ClassInfor class_Infor_, ArrayList<Attribute> attribute, ArrayList<Method> methods) {
+        this.class_Infor_ = class_Infor_;
         this.attribute = attribute;
         this.methods = methods;
     }
 
     @Override
     public String toString() {
-        return "File_{" +
-                "class_=" + class_ +
+        return "Class{" +
+                "class_Infor_=" + class_Infor_ +
                 ", attribute=" + attribute +
                 ", methods=" + methods +
                 '}';

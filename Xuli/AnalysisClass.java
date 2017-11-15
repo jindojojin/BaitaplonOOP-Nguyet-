@@ -1,14 +1,16 @@
 package Xuli;
 
-import Xuli.AnalysisData;
-import Xuli.Method;
+import Infor.Attribute;
+import Infor.ClassInfor;
+import Infor.Class;
+import Infor.Method;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class AnalysisFile {
+public class AnalysisClass {
     //xoa bo phan thua trong 1 dong
     public static String fix_Line(String str) {
 
@@ -25,9 +27,9 @@ public class AnalysisFile {
         return str;
     }
 
-    public File_ analysis(File file){
+    public Class analysis(File file){
 
-        Class class_= null;
+        ClassInfor class_Infor_Infor_ = null;
         ArrayList<Method> methods = new ArrayList<>();
         ArrayList<Attribute> attributes = new ArrayList<>();
 
@@ -41,7 +43,7 @@ public class AnalysisFile {
 //                System.out.println(str);
                 if (str == null) continue;
                 if(str.indexOf("class")>0 && str.endsWith("{")) {
-                    class_ = dataTo.AnalysisClass(str);
+                    class_Infor_Infor_ = dataTo.AnalysisClass(str);
                     continue;
                 }
 
@@ -65,9 +67,9 @@ public class AnalysisFile {
             e.printStackTrace();
         }
 
-        if(class_==null) return null;
+        if(class_Infor_Infor_ ==null) return null;
 
-        return new File_(class_,attributes,methods);
+        return new Class(class_Infor_Infor_,attributes,methods);
 
     }
 

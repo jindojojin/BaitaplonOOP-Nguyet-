@@ -1,5 +1,9 @@
 package Xuli;
 
+import Infor.Attribute;
+import Infor.ClassInfor;
+import Infor.Method;
+
 import java.util.ArrayList;
 
 public class AnalysisData {
@@ -21,14 +25,14 @@ public class AnalysisData {
 
     }
 
-    public Class AnalysisClass(String str){   // phan tich dong chua class
+    public ClassInfor AnalysisClass(String str){   // phan tich dong chua class
         String[] list = str.split(" ");// cat xau ra cac tu boi dau cach
 
         String access_Modify = list[0];
         String name = simple_fix(list[2]);
         if(list.length <= 4) {      // truong hop khong extends va khong implements
 
-            return new Class(name,access_Modify,null,null);
+            return new ClassInfor(name,access_Modify,null,null);
         }else {// co ke thua va cai dat
             String father_Class=null;
             ArrayList<String> implements_ = new ArrayList<>();
@@ -50,7 +54,7 @@ public class AnalysisData {
                 }
             }
 
-            return new Class(list[2],list[0],father_Class,implements_);
+            return new ClassInfor(list[2],list[0],father_Class,implements_);
         }
 
     }

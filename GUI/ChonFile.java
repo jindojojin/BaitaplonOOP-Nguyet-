@@ -4,9 +4,6 @@
 
 package GUI;
 
-import Xuli.AnalysisFile;
-import Xuli.File_;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
@@ -19,20 +16,16 @@ import javax.swing.filechooser.FileSystemView;
  * @author Linh Tran Quang
  */
 public class ChonFile extends JFrame {
-    public static File folder;
+    public File folder;
+    public boolean ok_button_press;
     public ChonFile() {
         initComponents();
+        setVisible(true);
+        ok_button_press = false;
     }
 
-    public void init() {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                ChonFile c = new ChonFile();
-                c.setVisible(true);
-                c.pack();
-            }
-        });
+    public File getFolder() {
+        return this.folder;
     }
 
     private void Click_ChonDuongDan(ActionEvent e) {
@@ -60,14 +53,15 @@ public class ChonFile extends JFrame {
         if(folder == null){
             JOptionPane.showMessageDialog(null,"Hay chon duong dan truoc","ERROR!",1);
         }else {
-
+            this.ok_button_press = true;
+            System.out.println("da bam ok");
+            setVisible(false);
         }
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Linh Tran Quang
-        dialogPane = new JPanel();
         contentPanel = new JPanel();
         button1 = new JButton();
         thong_tin = new JLabel();
@@ -81,81 +75,65 @@ public class ChonFile extends JFrame {
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
-        //======== dialogPane ========
+        //======== contentPanel ========
         {
-            dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
+            //---- button1 ----
+            button1.setText("CHON DUONG DAN");
+            button1.addActionListener(e -> Click_ChonDuongDan(e));
 
-            // JFormDesigner evaluation mark
-            dialogPane.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), dialogPane.getBorder())); dialogPane.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
-
-            dialogPane.setLayout(new BorderLayout());
-
-            //======== contentPanel ========
-            {
-
-                //---- button1 ----
-                button1.setText("CHON DUONG DAN");
-                button1.addActionListener(e -> Click_ChonDuongDan(e));
-
-                GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
-                contentPanel.setLayout(contentPanelLayout);
-                contentPanelLayout.setHorizontalGroup(
-                    contentPanelLayout.createParallelGroup()
-                        .addGroup(contentPanelLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(contentPanelLayout.createParallelGroup()
-                                .addComponent(thong_tin, GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
-                                .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
-                                    .addGap(0, 104, Short.MAX_VALUE)
-                                    .addComponent(button1, GroupLayout.PREFERRED_SIZE, 258, GroupLayout.PREFERRED_SIZE)))
-                            .addContainerGap())
-                );
-                contentPanelLayout.setVerticalGroup(
-                    contentPanelLayout.createParallelGroup()
-                        .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
-                            .addGap(16, 16, 16)
-                            .addComponent(thong_tin, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                            .addComponent(button1)
-                            .addGap(17, 17, 17))
-                );
-            }
-            dialogPane.add(contentPanel, BorderLayout.WEST);
-
-            //======== buttonBar ========
-            {
-                buttonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
-                buttonBar.setLayout(new GridBagLayout());
-                ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 85, 80};
-                ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0, 0.0};
-
-                //---- okButton ----
-                okButton.setText("OK");
-                okButton.addActionListener(e -> Click_OK(e));
-                buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 5), 0, 0));
-
-                //---- cancelButton ----
-                cancelButton.setText("Cancel");
-                cancelButton.addActionListener(e -> Click_cancel(e));
-                buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 5), 0, 0));
-
-                //---- helpButton ----
-                helpButton.setText("Help");
-                buttonBar.add(helpButton, new GridBagConstraints(3, 0, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 0), 0, 0));
-            }
-            dialogPane.add(buttonBar, BorderLayout.SOUTH);
+            GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
+            contentPanel.setLayout(contentPanelLayout);
+            contentPanelLayout.setHorizontalGroup(
+                contentPanelLayout.createParallelGroup()
+                    .addGroup(contentPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(contentPanelLayout.createParallelGroup()
+                            .addComponent(thong_tin, GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                            .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
+                                .addGap(0, 104, Short.MAX_VALUE)
+                                .addComponent(button1, GroupLayout.PREFERRED_SIZE, 258, GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+            );
+            contentPanelLayout.setVerticalGroup(
+                contentPanelLayout.createParallelGroup()
+                    .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(thong_tin, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(button1)
+                        .addGap(17, 17, 17))
+            );
         }
-        contentPane.add(dialogPane, BorderLayout.CENTER);
+        contentPane.add(contentPanel, BorderLayout.WEST);
+
+        //======== buttonBar ========
+        {
+            buttonBar.setBorder(new EmptyBorder(12, 0, 0, 0));
+            buttonBar.setLayout(new GridBagLayout());
+            ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 85, 85, 80};
+            ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0, 0.0};
+
+            //---- okButton ----
+            okButton.setText("OK");
+            okButton.addActionListener(e -> Click_OK(e));
+            buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
+                GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                new Insets(0, 0, 0, 5), 0, 0));
+
+            //---- cancelButton ----
+            cancelButton.setText("Cancel");
+            cancelButton.addActionListener(e -> Click_cancel(e));
+            buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
+                GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                new Insets(0, 0, 0, 5), 0, 0));
+
+            //---- helpButton ----
+            helpButton.setText("Help");
+            buttonBar.add(helpButton, new GridBagConstraints(3, 0, 1, 1, 0.0, 0.0,
+                GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                new Insets(0, 0, 0, 0), 0, 0));
+        }
+        contentPane.add(buttonBar, BorderLayout.SOUTH);
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -163,7 +141,6 @@ public class ChonFile extends JFrame {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Linh Tran Quang
-    private JPanel dialogPane;
     private JPanel contentPanel;
     private JButton button1;
     private JLabel thong_tin;

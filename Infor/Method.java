@@ -1,4 +1,4 @@
-package Xuli;
+package Infor;
 
 import java.util.Arrays;
 

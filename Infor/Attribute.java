@@ -1,4 +1,4 @@
-package Xuli;
+package Infor;
 
 /**
  * Created by DELL on 11/7/2017.
