@@ -27,6 +27,21 @@ public class AnalysisClass {
         return str;
     }
 
+    int check_braces=0; // bien de kiem tra xem str dang phan tich co o trong 1 method khong dua vao "{" vaf "}", hoat dong giong stack
+
+    //ham kiem tra str dang xet co nam trong 1 method khong
+    public boolean is_In_Method(String str){
+        if (check_braces >=1) {
+            check_braces += (" "+str+" ").split("\\{").length -1;
+            check_braces -= (" " + str + " ").split("}").length - 1;
+            return true;
+        }
+        check_braces += (" "+str+" ").split("\\{").length -1;
+        check_braces -= (" " + str + " ").split("}").length - 1;
+        return false;
+    }
+
+    //phan tich file
     public Class analysis(File file){
 
         ClassInfor classInfor = null;
@@ -36,7 +51,6 @@ public class AnalysisClass {
         AnalysisString dataTo = new AnalysisString();
 
         try{
-
             Scanner sc = new Scanner(file);
             while (sc.hasNextLine()) {
                 String str = fix_Line(sc.nextLine().trim());
@@ -47,10 +61,9 @@ public class AnalysisClass {
                     continue;
                 }
 
-                if(str.startsWith("public")||
-                        str.startsWith("protected")||
-                        str.startsWith("private")){
-                    if(str.endsWith(";")) {
+                if(is_In_Method(str) == true) continue;
+                else{
+                    if(str.indexOf("{") <0 ) {
                         attributes.add(dataTo.AnalysisAttribute(str));
                         continue;
                     }else{
