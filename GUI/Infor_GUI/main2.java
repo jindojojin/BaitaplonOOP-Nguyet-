@@ -36,7 +36,6 @@ public class main2 {
         jr.setSize(1000,1000);
         jr.setLayout(null);
         Panel_rectangle n =new Panel_rectangle(aClass,100,20);
-        n.setBackground(Color.BLUE);
         n.setVisible(true);
         jr.setTitle("jframe");
         jr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

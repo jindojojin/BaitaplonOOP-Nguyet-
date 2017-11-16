@@ -16,6 +16,9 @@ public class AnalysisClass {
 
         int pos, pos2;
         if(str.startsWith("//")) return null;// bat dau bang "//" thi la comment => tra ve null.
+        if(str.startsWith("import")) return null;
+        if(str.startsWith("package")) return null;
+        if(str.indexOf(";")<0 && str.indexOf("{")<0 && str.indexOf("}")<0) return null;
 
         while((pos = str.indexOf("/*")) >0){// vi tri dau xuat hien cua /*
             pos2= str.indexOf("*/");
@@ -31,7 +34,7 @@ public class AnalysisClass {
 
     //ham kiem tra str dang xet co nam trong 1 method khong
     public boolean is_In_Method(String str){
-        if (check_braces >=1) {
+        if (check_braces >1) {
             check_braces += (" "+str+" ").split("\\{").length -1;
             check_braces -= (" " + str + " ").split("}").length - 1;
             return true;
@@ -43,6 +46,7 @@ public class AnalysisClass {
 
     //phan tich file
     public Class analysis(File file){
+        System.out.println("Davaoday");
 
         ClassInfor classInfor = null;
         ArrayList<Method> methods = new ArrayList<>();
@@ -54,19 +58,23 @@ public class AnalysisClass {
             Scanner sc = new Scanner(file);
             while (sc.hasNextLine()) {
                 String str = fix_Line(sc.nextLine().trim());
+               // String str = sc.nextLine().trim();
 //                System.out.println(str);
                 if (str == null) continue;
+                if(is_In_Method(str) == true) continue;  // neu la 1 dong trong method thi xet luon dong tiep theo
+
                 if(str.indexOf(" class ")>0) {
+                    System.out.println("class: "+str);
                     classInfor = dataTo.analysisClassInfor(str);
                     continue;
-                }
-
-                if(is_In_Method(str) == true) continue; // neu la 1 dong trong method thi xet luon dong tiep theo
-                else{
+                }else{
                     if(str.indexOf("{") <0 ) {
+                        if (str.equals("}")) continue;
+                        System.out.println("attribute: "+str);
                         attributes.add(dataTo.AnalysisAttribute(str));
                         continue;
                     }else{
+                        System.out.println("method: "+str);
                         methods.add(dataTo.AnalysisMethod(str));
                         continue;
                     }

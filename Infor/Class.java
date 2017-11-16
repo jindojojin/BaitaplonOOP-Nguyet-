@@ -6,6 +6,8 @@ import java.util.ArrayList;
  * Created by DELL on 11/7/2017.
  */
 public class Class {
+    public int level =0;
+
     ClassInfor class_Infor_;
     ArrayList<Attribute> attribute;
     ArrayList<Method> methods;

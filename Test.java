@@ -5,12 +5,33 @@ import java.util.ArrayList;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println(analysisClassInfor("public abstract class Linh extends Nguyet implements Nguyet2,Linh2 ,Nguye ,Linh{"));
-        System.out.println(analysisClassInfor("public abstract class Linh extends Nguyet implements Nguyet2,Linh2 ,Nguye ,Linh {"));
-        System.out.println(analysisClassInfor("public abstract class Linh implements Nguyet2,Linh2 ,Nguye extends Linh{"));
-        System.out.println(analysisClassInfor("abstract class Linh extends Nguyet implements Nguyet2,Linh2 ,Nguye ,Linh{"));
-        System.out.println(analysisClassInfor("public class Linh extends Nguyet{"));
-        System.out.println(analysisClassInfor("public abstract class Linh implements Nguyet2,Linh2 ,Nguye ,Linh{"));
+//        System.out.println(analysisClassInfor("public abstract class Linh extends Nguyet implements Nguyet2,Linh2 ,Nguye ,Linh{"));
+//        System.out.println(analysisClassInfor("public abstract class Linh extends Nguyet implements Nguyet2,Linh2 ,Nguye ,Linh {"));
+//        System.out.println(analysisClassInfor("public abstract class Linh implements Nguyet2,Linh2 ,Nguye extends Linh{"));
+//        System.out.println(analysisClassInfor("abstract class Linh extends Nguyet implements Nguyet2,Linh2 ,Nguye ,Linh{"));
+//        System.out.println(analysisClassInfor("public class Linh extends Nguyet{"));
+//        System.out.println(analysisClassInfor("public abstract class Linh implements Nguyet2,Linh2 ,Nguye ,Linh{"));
+
+        System.out.println(is_In_Method("class {"));
+        System.out.println(is_In_Method("sdfasdasd;"));
+        System.out.println(is_In_Method("ham{"));
+        System.out.println(is_In_Method("safsdfasdfs"));
+        System.out.println(is_In_Method("sf}"));
+        System.out.println(is_In_Method("adsfasdf"));
+        System.out.println(is_In_Method("sfad"));
+        System.out.println(is_In_Method("{"));
+        System.out.println(is_In_Method("afsdfasd{"));
+        System.out.println(is_In_Method("}"));
+        System.out.println(is_In_Method("}"));
+
+
+
+
+
+
+
+
+
 
 
 
@@ -18,7 +39,7 @@ public class Test {
     public  static int check_braces = 0;
     public static boolean is_In_Method(String str){
 
-        if (check_braces >=1) {
+        if (check_braces >1) {
             check_braces += (" "+str+" ").split("\\{").length -1;
             check_braces -= (" " + str + " ").split("}").length - 1;
             return true;

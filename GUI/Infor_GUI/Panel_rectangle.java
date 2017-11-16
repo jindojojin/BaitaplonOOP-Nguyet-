@@ -15,6 +15,8 @@ public class Panel_rectangle extends JPanel {
     int docaochu=20;
     int khoangcachdong=10;
     int size_kitu =9;
+    Panel_rectangle father_Rectangle;
+    ArrayList<Panel_rectangle> list_implement = new ArrayList<>();
     
     String name_of_class;
     ArrayList<Method> methods ;
@@ -24,25 +26,29 @@ public class Panel_rectangle extends JPanel {
         setLocation(toadoX,toadoY);
         setVisible(true);
         setLayout(null);
-        setBackground(Color.BLUE);
+        setBackground(Color.LIGHT_GRAY);
         name_of_class = c.getClass_Infor_().getName_class();
         methods= c.getMethods();
         attributes=c.getAttribute();
     }
 
     private void initSize(Class c) {
-        int max_width =0;
-        for( Method m :c.getMethods()){
-           int l1= m.getName().length() +m.getReturn_Type().length() +2;
-           if(m.getList_Variable().size() >0) {
-               for (Variable v : m.getList_Variable()) {
-                   l1 += v.toString().length();
-               }
-           }
-            if (max_width < l1) max_width = l1;
-        }
         int max_heigth = c.getAttribute().size()+c.getMethods().size()+2;
-        this.setSize(max_width*size_kitu , max_heigth*(docaochu+khoangcachdong));
+        int max_width =15;
+        if(c.getMethods().size() >0) {
+            for (Method m : c.getMethods()) {
+                if(m !=null) {
+                    int l1 = m.getName().length() + m.getReturn_Type().length() + 2;
+                    if (m.getList_Variable().size() > 0) {
+                        for (Variable v : m.getList_Variable()) {
+                            l1 += v.toString().length();
+                        }
+                    }
+                    if (max_width < l1) max_width = l1;
+                }
+            }
+            this.setSize(max_width*size_kitu , max_heigth*(docaochu+khoangcachdong));
+        }
 //        System.out.println("da vao init size");
 //        System.out.println(max_heigth);
 //        System.out.println(max_width);
@@ -63,35 +69,52 @@ public class Panel_rectangle extends JPanel {
         g2d.drawString(name_of_class, 10, docaochu);
         g2d.drawLine(1, docaochu+khoangcachdong, this.getWidth()-5, docaochu+khoangcachdong);
         int y= 15;
-        for (Attribute attribute: attributes) {
-            y+=docaochu+khoangcachdong;
-            if(attribute.getAccess_Modify() != null && attribute.getAccess_Modify().equals("public")){
-                g2d.drawString("+", 2,y);
-            }else g2d.drawString("-", 2,y);
-            g2d.drawString(attribute.getReturn_type()+" "+attribute.getName(), 10,y);
+        if(attributes.size()>0) {
+            for (Attribute attribute : attributes) {
+                y += docaochu + khoangcachdong;
+                if(attribute!=null) {
+                    if (attribute.getAccess_Modify() != null) {
+                        if (attribute.getAccess_Modify().equals("public")) {
+                            g2d.drawString("+", 2, y);
+                        } else if(attribute.getAccess_Modify().equals("private")) {
+                            g2d.drawString("-", 2, y);
+                        } else g2d.drawString("#", 2, y);
+                    }
+                    g2d.drawString(attribute.getReturn_type() + " " + attribute.getName(), 10, y);
+                }
 
+            }
         }
         y+=khoangcachdong;
         g2d.drawLine(1,y+5, this.getWidth()-5,y+5);
 
-        for (Method method: methods) {
-            y+=docaochu+khoangcachdong;
-            if(method.getAccess_Modify().equals("public")){
-                g2d.drawString("+", 2,y);
-            } else g2d.drawString("-", 2,y);
+        if(methods.size()>0) {
+            for (Method method : methods) {
+                y += docaochu + khoangcachdong;
+                if(method !=null) {
+                    if(method.getAccess_Modify()!=null) {
+                        if (method.getAccess_Modify().equals("public")) {
+                            g2d.drawString("+", 2, y);
+                        } else if(method.getAccess_Modify().equals("private")){
+                            g2d.drawString("-", 2, y);
+                        } else g2d.drawString("#", 2, y);
 
-            String method_infor= ""; //phan in ra man hinh
-            if(method.isIs_Abstract_Method()){
-                method_infor= "abstract "+method_infor;
-            }
-            method_infor+= method.getReturn_Type()+" "+method.getName()+"( ";
-            if(method.getList_Variable() != null){
-                for(Variable v : method.getList_Variable()){
-                    method_infor+=v.toString()+", ";
+                    }
+
+                    String method_infor = ""; //phan in ra man hinh
+                    if (method.isIs_Abstract_Method()) {
+                        method_infor = "abstract " + method_infor;
+                    }
+                    method_infor += method.getReturn_Type() + " " + method.getName() + "( ";
+                    if (method.getList_Variable() != null) {
+                        for (Variable v : method.getList_Variable()) {
+                            method_infor += v.toString() + ", ";
+                        }
+                        method_infor = method_infor.substring(0, method_infor.length() - 2) + " )";
+                    }
+                    g2d.drawString(method_infor, 10, y);
                 }
             }
-            method_infor= method_infor.substring(0,method_infor.length()-2)+" )";
-                g2d.drawString(method_infor, 10,y);
         }
 
         System.out.println("da vao draw()");

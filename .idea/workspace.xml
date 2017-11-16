@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e7c3143-4f9f-4d77-99b1-9af80f40219d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GUI/Infor_GUI/Panel_rectangle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GUI/Infor_GUI/main2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Xuli/PhanTangClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUI/ChonFile.java" afterPath="$PROJECT_DIR$/GUI/ChonFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUI/ChonFile.jfd" afterPath="$PROJECT_DIR$/GUI/ChonFile.jfd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Infor/Attribute.java" afterPath="$PROJECT_DIR$/Infor/Attribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUI/Infor_GUI/Panel_rectangle.java" afterPath="$PROJECT_DIR$/GUI/Infor_GUI/Panel_rectangle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUI/Infor_GUI/main2.java" afterPath="$PROJECT_DIR$/GUI/Infor_GUI/main2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Infor/Class.java" afterPath="$PROJECT_DIR$/Infor/Class.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Infor/ClassInfor.java" afterPath="$PROJECT_DIR$/Infor/ClassInfor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Infor/Method.java" afterPath="$PROJECT_DIR$/Infor/Method.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Infor/Variable.java" afterPath="$PROJECT_DIR$/Infor/Variable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.java" afterPath="$PROJECT_DIR$/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test.java" afterPath="$PROJECT_DIR$/Test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Xuli/AnalysisClass.java" afterPath="$PROJECT_DIR$/Xuli/AnalysisClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Xuli/AnalysisString.java" afterPath="$PROJECT_DIR$/Xuli/AnalysisString.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,48 +23,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1092">
+              <caret line="49" column="71" lean-forward="false" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhanTangClass.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Xuli/PhanTangClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="942">
+              <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalysisString.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Xuli/AnalysisString.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+              <folding>
+                <element signature="method#simple_fix#0;class#AnalysisString#0" expanded="false" />
+                <element signature="method#advance_fix#0;class#AnalysisString#0" expanded="false" />
+                <element signature="method#analysisClassInfor#0;class#AnalysisString#0" expanded="false" />
+                <element signature="method#AnalysisAttribute#0;class#AnalysisString#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AnalysisClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Xuli/AnalysisClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="65" column="46" lean-forward="false" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+            <state relative-caret-position="476">
+              <caret line="66" column="47" lean-forward="false" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChonFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/ChonFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="69" column="37" lean-forward="false" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
               <folding>
-                <element signature="method#is_In_Method#0;class#AnalysisClass#0" expanded="false" />
+                <element signature="docComment;class#ChonFile#0" expanded="false" />
+                <element signature="method#ChonFile#0;class#ChonFile#0" expanded="false" />
+                <element signature="method#Click_ChonDuongDan#0;class#ChonFile#0" expanded="false" />
+                <element signature="method#Click_cancel#0;class#ChonFile#0" expanded="false" />
+                <element signature="method#Click_help#0;class#ChonFile#0" expanded="false" />
+                <element signature="method#initComponents#0;class#ChonFile#0" expanded="false" />
+                <element signature="e#2966#3053#0" expanded="false" />
+                <marker date="1510813078327" expanded="false" signature="2966:7265" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1510813078327" expanded="false" signature="7277:7721" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Method.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Infor/Method.java">
+      <file leaf-file-name="Class.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Infor/Class.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="47" column="61" lean-forward="false" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+            <state relative-caret-position="224">
+              <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#612#613#0" expanded="true" />
-                <element signature="e#639#640#0" expanded="true" />
-                <element signature="e#677#678#0" expanded="true" />
-                <element signature="e#711#712#0" expanded="true" />
-                <element signature="e#751#752#0" expanded="true" />
-                <element signature="e#787#788#0" expanded="true" />
-                <element signature="e#832#833#0" expanded="true" />
-                <element signature="e#873#874#0" expanded="true" />
-                <element signature="e#926#927#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Variable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Infor/Variable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-              <folding>
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+                <element signature="e#525#526#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,18 +106,33 @@
       <file leaf-file-name="Panel_rectangle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/Infor_GUI/Panel_rectangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="-327">
+              <caret line="78" column="78" lean-forward="false" selection-start-line="78" selection-start-column="78" selection-end-line="78" selection-end-column="78" />
+              <folding>
+                <element signature="method#initSize#0;class#Panel_rectangle#0" expanded="false" />
+                <element signature="e#1620#1669#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main2.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/Infor_GUI/main2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="532">
+              <caret line="34" column="24" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="42" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -95,26 +142,6 @@
         <entry file="file://$PROJECT_DIR$/GUI/ChonFile.jfd">
           <provider selected="true" editor-type-id="JFormDesigner">
             <state propertiesWidth="655" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassInfor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Infor/ClassInfor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-357">
-              <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-              <folding>
-                <element signature="e#646#647#0" expanded="true" />
-                <element signature="e#686#687#0" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#761#762#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-                <element signature="e#840#841#0" expanded="true" />
-                <element signature="e#880#881#0" expanded="true" />
-                <element signature="e#929#930#0" expanded="true" />
-                <element signature="e#963#964#0" expanded="true" />
-              </folding>
-            </state>
           </provider>
         </entry>
       </file>
@@ -168,31 +195,31 @@
         <option value="$PROJECT_DIR$/Infor/Class_Infor.java" />
         <option value="$PROJECT_DIR$/Xuli/example2.java" />
         <option value="$PROJECT_DIR$/Xuli/AnalysisData.java" />
-        <option value="$PROJECT_DIR$/Main.java" />
-        <option value="$PROJECT_DIR$/GUI/ChonFile.java" />
-        <option value="$PROJECT_DIR$/Test.java" />
-        <option value="$PROJECT_DIR$/Xuli/AnalysisString.java" />
-        <option value="$PROJECT_DIR$/Infor/Class.java" />
         <option value="$PROJECT_DIR$/Infor/ClassInfor.java" />
         <option value="$PROJECT_DIR$/Infor/Attribute.java" />
-        <option value="$PROJECT_DIR$/Xuli/AnalysisClass.java" />
         <option value="$PROJECT_DIR$/GUI/Infor_GUI/Diagram.java" />
         <option value="$PROJECT_DIR$/Infor/Variable.java" />
         <option value="$PROJECT_DIR$/GUI/Infor_GUI/Rectangle.java" />
         <option value="$PROJECT_DIR$/GUI/ChonFile.jfd" />
         <option value="$PROJECT_DIR$/GUI/Infor_GUI/Hinhve.java" />
         <option value="$PROJECT_DIR$/GUI/Infor_GUI/Panel_Class.java" />
+        <option value="$PROJECT_DIR$/GUI/ChonFile.java" />
         <option value="$PROJECT_DIR$/Infor/Method.java" />
+        <option value="$PROJECT_DIR$/Xuli/AnalysisString.java" />
+        <option value="$PROJECT_DIR$/Test.java" />
+        <option value="$PROJECT_DIR$/Xuli/AnalysisClass.java" />
         <option value="$PROJECT_DIR$/GUI/Infor_GUI/main2.java" />
         <option value="$PROJECT_DIR$/GUI/Infor_GUI/Panel_rectangle.java" />
+        <option value="$PROJECT_DIR$/Infor/Class.java" />
+        <option value="$PROJECT_DIR$/Main.java" />
+        <option value="$PROJECT_DIR$/Xuli/PhanTangClass.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="261" />
     <option name="y" value="27" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="width" value="960" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -227,6 +254,12 @@
               <item name="BaitaplonOOP-NGUYET-" type="b2602c69:ProjectViewProjectNode" />
               <item name="BaitaplonOOP-NGUYET-" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BaitaplonOOP-NGUYET-" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaitaplonOOP-NGUYET-" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="Infor_GUI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BaitaplonOOP-NGUYET-" type="b2602c69:ProjectViewProjectNode" />
@@ -270,26 +303,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.main2">
-    <configuration name="Diagram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="GUI.Infor_GUI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="GUI.Infor_GUI.Diagram" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="BaitaplonOOP-NGUYET-" />
-      <envs />
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Hinhve" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -309,14 +323,28 @@
       <module name="BaitaplonOOP-NGUYET-" />
       <envs />
     </configuration>
-    <configuration name="Panel_rectangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BaitaplonOOP-NGUYET-" />
+      <envs />
+    </configuration>
+    <configuration name="PhanTangClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="GUI.Infor_GUI.*" />
+          <option name="PATTERN" value="Xuli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="GUI.Infor_GUI.Panel_rectangle" />
+      <option name="MAIN_CLASS_NAME" value="Xuli.PhanTangClass" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -443,19 +471,19 @@
       <envs />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Test" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Diagram" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Hinhve" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Panel_rectangle" />
-      <item index="4" class="java.lang.String" itemvalue="Application.main2" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Hinhve" />
+      <item index="1" class="java.lang.String" itemvalue="Application.main2" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Test" />
+      <item index="4" class="java.lang.String" itemvalue="Application.PhanTangClass" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.main2" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Hinhve" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Panel_rectangle" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Diagram" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Test" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Application.PhanTangClass" />
+        <item index="2" class="java.lang.String" itemvalue="Application.main2" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Test" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Hinhve" />
       </list>
     </recent_temporary>
   </component>
@@ -501,11 +529,19 @@
       <option name="project" value="LOCAL" />
       <updated>1510791498096</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="hoan thien Panel de ve thong tin class len man hinh">
+      <created>1510811673436</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1510811673436</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="261" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -515,12 +551,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25026512" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29798517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.094791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.094791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -554,7 +590,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25026512" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20042418" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.094791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -571,34 +607,16 @@
     <MESSAGE value="sua ten cac class, doi ten class ( Class dai dien cho 1 file .java, ClassInfor the hien thong tin co ban cua class)" />
     <MESSAGE value="chinh lai giao dien" />
     <MESSAGE value="hoan thien ham xu li thong tin class" />
-    <option name="LAST_COMMIT_MESSAGE" value="hoan thien ham xu li thong tin class" />
+    <MESSAGE value="hoan thien Panel de ve thong tin class len man hinh" />
+    <option name="LAST_COMMIT_MESSAGE" value="hoan thien Panel de ve thong tin class len man hinh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GUI/ChonFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="81" column="41" lean-forward="false" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
-          <folding>
-            <element signature="docComment;class#ChonFile#0" expanded="false" />
-            <element signature="method#ChonFile#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#Click_ChonDuongDan#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#Click_cancel#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#Click_OK#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#Click_help#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#initComponents#0;class#ChonFile#0" expanded="false" />
-            <element signature="e#2966#3053#0" expanded="false" />
-            <marker date="1510806763085" expanded="false" signature="2966:7265" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1510806763085" expanded="false" signature="7277:7721" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -629,12 +647,11 @@
             <element signature="method#ChonFile#0;class#ChonFile#0" expanded="false" />
             <element signature="method#Click_ChonDuongDan#0;class#ChonFile#0" expanded="false" />
             <element signature="method#Click_cancel#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#Click_OK#0;class#ChonFile#0" expanded="false" />
             <element signature="method#Click_help#0;class#ChonFile#0" expanded="false" />
             <element signature="method#initComponents#0;class#ChonFile#0" expanded="false" />
             <element signature="e#2966#3053#0" expanded="false" />
-            <marker date="1510806763085" expanded="false" signature="2966:7265" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1510806763085" expanded="false" signature="7277:7721" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1510813078327" expanded="false" signature="2966:7265" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1510813078327" expanded="false" signature="7277:7721" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -643,9 +660,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding>
-            <element signature="method#is_In_Method#0;class#AnalysisClass#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -704,25 +719,6 @@
     <entry file="file://$PROJECT_DIR$/Xuli/example.java" />
     <entry file="file://$PROJECT_DIR$/Xuli/example2.java" />
     <entry file="file://$PROJECT_DIR$/Xuli/AnalysisData.java" />
-    <entry file="file://$PROJECT_DIR$/GUI/ChonFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="79" column="64" lean-forward="true" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
-          <folding>
-            <element signature="docComment;class#ChonFile#0" expanded="false" />
-            <element signature="method#ChonFile#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#Click_ChonDuongDan#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#Click_cancel#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#Click_OK#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#Click_help#0;class#ChonFile#0" expanded="false" />
-            <element signature="method#initComponents#0;class#ChonFile#0" expanded="false" />
-            <element signature="e#2966#3053#0" expanded="false" />
-            <marker date="1510806763085" expanded="false" signature="2966:7265" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1510806763085" expanded="false" signature="7277:7721" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hs_err_pid30243.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -750,53 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="24" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="103" column="13" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="107" selection-end-column="99" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Xuli/AnalysisString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
-          <folding>
-            <element signature="method#simple_fix#0;class#AnalysisString#0" expanded="false" />
-            <element signature="method#advance_fix#0;class#AnalysisString#0" expanded="false" />
-            <element signature="method#analysisClassInfor#0;class#AnalysisString#0" expanded="false" />
-            <element signature="method#AnalysisAttribute#0;class#AnalysisString#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Infor/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Infor/Attribute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -813,16 +762,6 @@
             <element signature="e#960#961#0" expanded="true" />
             <element signature="e#995#996#0" expanded="true" />
             <element signature="e#1026#1027#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Xuli/AnalysisClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="65" column="46" lean-forward="false" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
-          <folding>
-            <element signature="method#is_In_Method#0;class#AnalysisClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -872,11 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/ChonFile.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state propertiesWidth="655" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Infor_GUI/Panel_Class.ava">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -887,8 +821,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Infor/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="47" column="61" lean-forward="false" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+        <state relative-caret-position="196">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="10" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#612#613#0" expanded="true" />
@@ -905,19 +839,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Infor/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/ChonFile.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state propertiesWidth="655" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Infor_GUI/Panel_rectangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="-327">
+          <caret line="78" column="78" lean-forward="false" selection-start-line="78" selection-start-column="78" selection-end-line="78" selection-end-column="78" />
+          <folding>
+            <element signature="method#initSize#0;class#Panel_rectangle#0" expanded="false" />
+            <element signature="e#1620#1669#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/Infor_GUI/main2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="532">
+          <caret line="34" column="24" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="42" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Xuli/AnalysisString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding>
+            <element signature="method#simple_fix#0;class#AnalysisString#0" expanded="false" />
+            <element signature="method#advance_fix#0;class#AnalysisString#0" expanded="false" />
+            <element signature="method#analysisClassInfor#0;class#AnalysisString#0" expanded="false" />
+            <element signature="method#AnalysisAttribute#0;class#AnalysisString#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/ChonFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="69" column="37" lean-forward="false" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+          <folding>
+            <element signature="docComment;class#ChonFile#0" expanded="false" />
+            <element signature="method#ChonFile#0;class#ChonFile#0" expanded="false" />
+            <element signature="method#Click_ChonDuongDan#0;class#ChonFile#0" expanded="false" />
+            <element signature="method#Click_cancel#0;class#ChonFile#0" expanded="false" />
+            <element signature="method#Click_help#0;class#ChonFile#0" expanded="false" />
+            <element signature="method#initComponents#0;class#ChonFile#0" expanded="false" />
+            <element signature="e#2966#3053#0" expanded="false" />
+            <marker date="1510813078327" expanded="false" signature="2966:7265" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1510813078327" expanded="false" signature="7277:7721" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Xuli/AnalysisClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="66" column="47" lean-forward="false" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="49" column="71" lean-forward="false" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Xuli/PhanTangClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="942">
+          <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

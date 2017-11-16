@@ -3,6 +3,7 @@ package Xuli;
 import Infor.Attribute;
 import Infor.ClassInfor;
 import Infor.Method;
+import Infor.Variable;
 
 import java.util.ArrayList;
 
@@ -87,28 +88,16 @@ public class AnalysisString {
 
     //phan tich 1 dong chua method
     public Method AnalysisMethod(String str) {
+        String name="";
+        String return_Type="";
+        String access_Modify = "default";
+        boolean is_Abstract_Method = false;
+        ArrayList<Variable> list_Variable = new ArrayList<>();
 
-        String acces_Modify;
-        String return_Type;
-        String name;
-        String[] list = str.split(" ");
-        acces_Modify = list[0];
-        if (list[1].equals("static")) {
 
-            return_Type = "static " + list[2];
-            name = advance_fix(list[3]);
 
-        } else {
 
-            if (list[1].indexOf("(") >= 0) { // truong hop khong co kieu tra ve / contructor
-                return_Type = null;
-                name = advance_fix(list[1]);
-            } else {
-                return_Type = list[1];
-                name = advance_fix(list[2]);
-            }
-        }
-        return null;
+        return new Method(name,return_Type,access_Modify,is_Abstract_Method,list_Variable);
     }
 
     //phan tich thuoc tinh

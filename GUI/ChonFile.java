@@ -67,10 +67,10 @@ public class ChonFile extends JFrame {
             if(list_java_file.size() == 0){
                 JOptionPane.showMessageDialog(null,"Thu muc khong chua file java nao","Error!!",1);
             }else {
-                this.ok_button_press = true;
-                System.out.println("da bam ok");
                 phan_tich_tung_file(list_java_file);
+                System.out.println("da bam ok");
                 setVisible(false);
+                this.ok_button_press = true;
 
             }
         }
