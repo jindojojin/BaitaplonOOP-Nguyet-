@@ -16,6 +16,18 @@ public class Class {
         this.methods = methods;
     }
 
+    public ClassInfor getClass_Infor_() {
+        return class_Infor_;
+    }
+
+    public ArrayList<Attribute> getAttribute() {
+        return attribute;
+    }
+
+    public ArrayList<Method> getMethods() {
+        return methods;
+    }
+
     @Override
     public String toString() {
         return "Class{" +

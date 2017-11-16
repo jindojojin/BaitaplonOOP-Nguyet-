@@ -61,7 +61,7 @@ public class AnalysisClass {
                     continue;
                 }
 
-                if(is_In_Method(str) == true) continue;
+                if(is_In_Method(str) == true) continue; // neu la 1 dong trong method thi xet luon dong tiep theo
                 else{
                     if(str.indexOf("{") <0 ) {
                         attributes.add(dataTo.AnalysisAttribute(str));

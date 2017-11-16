@@ -14,9 +14,6 @@ public class Variable {
 
     @Override
     public String toString() {
-        return "Variable{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return type +" "+name;
     }
 }

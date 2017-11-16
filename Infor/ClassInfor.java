@@ -17,6 +17,26 @@ public class ClassInfor {
         this.implements_ = implements_;
     }
 
+    public String getName_class() {
+        return name_class;
+    }
+
+    public String getAccess_Modify() {
+        return access_Modify;
+    }
+
+    public String getFather_Class() {
+        return father_Class;
+    }
+
+    public boolean isIs_Abstract_Class() {
+        return is_Abstract_Class;
+    }
+
+    public ArrayList<String> getImplements_() {
+        return implements_;
+    }
+
     @Override
     public String toString() {
         return "ClassInfor{" +

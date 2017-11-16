@@ -7,8 +7,8 @@ new FormModel {
 			name: "this"
 			"defaultCloseOperation": 3
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :p:21:p, comp thong_tin:::p:590:p, space ::31:x}}"
-				"$verticalGroup": "par l {comp thong_tin::t:p:209:p}"
+				"$horizontalGroup": "par l {seq l {space :p:21:p, comp thong_tin:::p:503:p, space ::118:x}}"
+				"$verticalGroup": "par l {seq t {space :0:0:x, comp thong_tin:::p:97:p}}"
 			} ) {
 				name: "contentPanel"
 				add( new FormComponent( "javax.swing.JLabel" ) {

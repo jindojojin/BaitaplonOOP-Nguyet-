@@ -20,6 +20,30 @@ public class Attribute {
         this.is_const = is_const;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getReturn_type() {
+        return return_type;
+    }
+
+    public String getAccess_Modify() {
+        return access_Modify;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public boolean isIs_Attribute_Property() {
+        return is_Attribute_Property;
+    }
+
+    public boolean isIs_const() {
+        return is_const;
+    }
+
     @Override
     public String toString() {
         return "Attribute{" +

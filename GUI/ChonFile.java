@@ -107,18 +107,28 @@ public class ChonFile extends JFrame {
         //======== contentPanel ========
         {
 
+            // JFormDesigner evaluation mark
+            contentPanel.setBorder(new javax.swing.border.CompoundBorder(
+                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                    java.awt.Color.red), contentPanel.getBorder())); contentPanel.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
+
             GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
             contentPanel.setLayout(contentPanelLayout);
             contentPanelLayout.setHorizontalGroup(
                 contentPanelLayout.createParallelGroup()
                     .addGroup(contentPanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(thong_tin, GroupLayout.PREFERRED_SIZE, 590, GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(31, Short.MAX_VALUE))
+                        .addComponent(thong_tin, GroupLayout.PREFERRED_SIZE, 503, GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(118, Short.MAX_VALUE))
             );
             contentPanelLayout.setVerticalGroup(
                 contentPanelLayout.createParallelGroup()
-                    .addComponent(thong_tin, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
+                    .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(thong_tin, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE))
             );
         }
         contentPane.add(contentPanel, BorderLayout.WEST);
