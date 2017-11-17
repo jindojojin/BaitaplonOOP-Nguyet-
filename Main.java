@@ -29,10 +29,15 @@ public class Main {
             System.out.println(cls.getClass_Infor_().getName_class()+": "+cls.level);
         }
 
-        ScrollPane n = new ScrollPane(list_Class);
 
-        Panel_rectangle test = new Panel_rectangle(list_Class.get(3),0,0);
-        n.add(test);
+
+
+
+
+
+        System.out.println("Da vao phan cap class");
+        ScrollPane frame =new ScrollPane(list_Class);
+        frame.setResizable(true);
     }
 
 

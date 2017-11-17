@@ -15,6 +15,16 @@ public class Panel_rectangle extends JPanel {
     int docaochu=20;
     int khoangcachdong=10;
     int size_kitu =9;
+    Panel_rectangle father_PanelRectangfle =null;
+
+    public Panel_rectangle getFather_PanelRectangfle() {
+        return father_PanelRectangfle;
+    }
+
+    public void setFather_PanelRectangfle(Panel_rectangle father_PanelRectangfle) {
+        this.father_PanelRectangfle = father_PanelRectangfle;
+    }
+
     Class aclass ;
     ArrayList<Panel_rectangle> list_implement = new ArrayList<>();
     
@@ -32,6 +42,11 @@ public class Panel_rectangle extends JPanel {
         methods= c.getMethods();
         attributes=c.getAttribute();
         System.out.println("Da vao contructor cua Panel_rectangle");
+
+        x_top=this.getX()+this.getWidth()/2;
+        y_top=this.getY();
+        x_button =x_top;
+        y_button = y_top+this.getHeight();
     }
 
 
@@ -64,7 +79,14 @@ public class Panel_rectangle extends JPanel {
         super.paintComponent(graphics);
         Graphics2D g = (Graphics2D) graphics;
         this.draw(g);
+        this.drawLine(g);
         System.out.println("Da vao Panel_rectangle.paintComponent()");
+    }
+
+    private void drawLine(Graphics2D g) {
+        if(father_PanelRectangfle!= null){
+            g.drawLine(x_top,y_top,father_PanelRectangfle.x_button,father_PanelRectangfle.y_button);
+        }
     }
 
     public void draw(Graphics2D g2d){
