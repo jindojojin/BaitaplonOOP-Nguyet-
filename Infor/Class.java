@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class Class {
     public int level =0;
+    public boolean is_Father_Class = false;
 
     ClassInfor class_Infor_;
     ArrayList<Attribute> attribute;

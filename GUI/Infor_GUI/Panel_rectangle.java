@@ -15,7 +15,7 @@ public class Panel_rectangle extends JPanel {
     int docaochu=20;
     int khoangcachdong=10;
     int size_kitu =9;
-    Panel_rectangle father_Rectangle;
+    Class aclass ;
     ArrayList<Panel_rectangle> list_implement = new ArrayList<>();
     
     String name_of_class;
@@ -23,6 +23,7 @@ public class Panel_rectangle extends JPanel {
     ArrayList<Attribute> attributes;
     public Panel_rectangle(Class c, int toadoX, int toadoY) {
         initSize(c);
+        this.aclass =c;
         setLocation(toadoX,toadoY);
         setVisible(true);
         setLayout(null);
@@ -30,7 +31,9 @@ public class Panel_rectangle extends JPanel {
         name_of_class = c.getClass_Infor_().getName_class();
         methods= c.getMethods();
         attributes=c.getAttribute();
+        System.out.println("Da vao contructor cua Panel_rectangle");
     }
+
 
     private void initSize(Class c) {
         int max_heigth = c.getAttribute().size()+c.getMethods().size()+2;
@@ -49,25 +52,25 @@ public class Panel_rectangle extends JPanel {
             }
             this.setSize(max_width*size_kitu , max_heigth*(docaochu+khoangcachdong));
         }
-//        System.out.println("da vao init size");
-//        System.out.println(max_heigth);
-//        System.out.println(max_width);
+
+    }
+
+    public Class getAclass() {
+        return aclass;
     }
 
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
-        //System.out.println("da vao day");
-
         Graphics2D g = (Graphics2D) graphics;
         this.draw(g);
-        //g.drawLine(0,0,40,67);
+        System.out.println("Da vao Panel_rectangle.paintComponent()");
     }
 
     public void draw(Graphics2D g2d){
-        g2d.draw(new java.awt.Rectangle(1, 1,this.getWidth()-5,this.getHeight()-5));
+        g2d.draw(new java.awt.Rectangle(1, 1,this.getWidth()-3,this.getHeight()-3));
         g2d.drawString(name_of_class, 10, docaochu);
-        g2d.drawLine(1, docaochu+khoangcachdong, this.getWidth()-5, docaochu+khoangcachdong);
+        g2d.drawLine(1, docaochu+khoangcachdong, this.getWidth()-3, docaochu+khoangcachdong);
         int y= 15;
         if(attributes.size()>0) {
             for (Attribute attribute : attributes) {
