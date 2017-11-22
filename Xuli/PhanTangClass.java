@@ -10,9 +10,9 @@ public class PhanTangClass {
 
     public void setLevel(Class cl, ArrayList<Class> listClass){
         for(Class cl2 : listClass){
-            if(cl2.getClass_Infor_().getFather_Class() != null) {
-                if (cl2.getClass_Infor_().getFather_Class().equals(cl.getClass_Infor_().getName_class())) {
-                    cl.is_Father_Class = true;
+            if(cl2.getClassInfor().getFather_Class() != null) {
+                if (cl2.getClassInfor().getFather_Class().equals(cl.getClassInfor().getName_class())) {
+                    cl.isFatherClass = true;
                     cl2.level=cl.level+1;
                     System.out.println(cl2.level);
                     setLevel(cl2, listClass);

@@ -1,3 +1,4 @@
+import Infor.Attribute;
 import Infor.ClassInfor;
 import Infor.Variable;
 
@@ -5,37 +6,47 @@ import java.util.ArrayList;
 
 public class Test {
     public static void main(String[] args) {
-//        System.out.println(analysisClassInfor("public abstract class Linh extends Nguyet implements Nguyet2,Linh2 ,Nguye ,Linh{"));
-//        System.out.println(analysisClassInfor("public abstract class Linh extends Nguyet implements Nguyet2,Linh2 ,Nguye ,Linh {"));
-//        System.out.println(analysisClassInfor("public abstract class Linh implements Nguyet2,Linh2 ,Nguye extends Linh{"));
-//        System.out.println(analysisClassInfor("abstract class Linh extends Nguyet implements Nguyet2,Linh2 ,Nguye ,Linh{"));
-//        System.out.println(analysisClassInfor("public class Linh extends Nguyet{"));
-//        System.out.println(analysisClassInfor("public abstract class Linh implements Nguyet2,Linh2 ,Nguye ,Linh{"));
 
-        System.out.println(is_In_Method("class {"));
-        System.out.println(is_In_Method("sdfasdasd;"));
-        System.out.println(is_In_Method("ham{"));
-        System.out.println(is_In_Method("safsdfasdfs"));
-        System.out.println(is_In_Method("sf}"));
-        System.out.println(is_In_Method("adsfasdf"));
-        System.out.println(is_In_Method("sfad"));
-        System.out.println(is_In_Method("{"));
-        System.out.println(is_In_Method("afsdfasd{"));
-        System.out.println(is_In_Method("}"));
-        System.out.println(is_In_Method("}"));
+}
 
 
 
+    public Attribute phantichthuoctinh(String str) {
+        String name = null;
+        String return_type = null;
+        String access_Modify = null;
+        String value = null;
+        boolean is_Attribute_Property = false;
+        boolean is_const = false;
 
+        //su dung cac ham indexOf(str) : tra ve vi tri cua xau str trong xau dang xet
+        // vd :
+        int x = str.indexOf("static");// public static int a;=> x =7   (" neu x >0 thi xau str co mat trong xau")
 
-
-
-
-
-
-
-
+            list[] = str.split(" ");
+        // kiem tra xem co tu "static" trong xau khong , neu co thi is_Attribute_Property = true;
+        // kiem tra xem co tu "final" trong xau khong, neu co thi is_const = true => co value, neu khong khong thi value = null;
+        // cat xau ra boi dau " ", split(" ")
+        // th1: co muc truy cap
+        if // co muc truy cap {
+            if // la bien tinh{
+                if( // la hang so){
+                else // neu khong la hang so
+        { return_type = list[2]
     }
+    }
+    }
+
+
+
+
+
+
+        return new Attribute(name,return_type,access_Modify,value,is_Attribute_Property,is_const);
+    }
+
+
+
     public  static int check_braces = 0;
     public static boolean is_In_Method(String str){
 

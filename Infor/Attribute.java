@@ -48,11 +48,12 @@ public class Attribute {
     public String toString() {
         return "Attribute{" +
                 "name='" + name + '\'' +
+                ", value='" + value + '\'' +
                 ", return_type='" + return_type + '\'' +
                 ", access_Modify='" + access_Modify + '\'' +
-                ", value='" + value + '\'' +
                 ", is_Attribute_Property=" + is_Attribute_Property +
                 ", is_const=" + is_const +
                 '}';
     }
+
 }

@@ -7,24 +7,24 @@ import java.util.ArrayList;
  */
 public class Class {
     public int level =0;
-    public boolean is_Father_Class = false;
+    public boolean isFatherClass = false;
 
-    ClassInfor class_Infor_;
-    ArrayList<Attribute> attribute;
+    ClassInfor classInfor;
+    ArrayList<Attribute> attributes;
     ArrayList<Method> methods;
 
-    public Class(ClassInfor class_Infor_, ArrayList<Attribute> attribute, ArrayList<Method> methods) {
-        this.class_Infor_ = class_Infor_;
-        this.attribute = attribute;
+    public Class(ClassInfor classInfor, ArrayList<Attribute> attributes, ArrayList<Method> methods) {
+        this.classInfor = classInfor;
+        this.attributes = attributes;
         this.methods = methods;
     }
 
-    public ClassInfor getClass_Infor_() {
-        return class_Infor_;
+    public ClassInfor getClassInfor() {
+        return classInfor;
     }
 
-    public ArrayList<Attribute> getAttribute() {
-        return attribute;
+    public ArrayList<Attribute> getAttributes() {
+        return attributes;
     }
 
     public ArrayList<Method> getMethods() {
@@ -34,8 +34,8 @@ public class Class {
     @Override
     public String toString() {
         return "Class{" +
-                "class_Infor_=" + class_Infor_ +
-                ", attribute=" + attribute +
+                "classInfor=" + classInfor +
+                ", attributes=" + attributes +
                 ", methods=" + methods +
                 '}';
     }

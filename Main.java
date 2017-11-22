@@ -1,11 +1,8 @@
 import GUI.ChonFile;
-import GUI.Infor_GUI.Panel_rectangle;
-import GUI.ScrollPane;
+import GUI.MainFrame;
 import Infor.Class;
 import Xuli.PhanTangClass;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Main {
@@ -26,17 +23,10 @@ public class Main {
             p.setLevel(cl, list_Class);
         }
         for(Class cls : list_Class){
-            System.out.println(cls.getClass_Infor_().getName_class()+": "+cls.level);
+            System.out.println(cls.getClassInfor().getName_class()+": "+cls.level);
         }
-
-
-
-
-
-
-
         System.out.println("Da vao phan cap class");
-        ScrollPane frame =new ScrollPane(list_Class);
+        MainFrame frame =new MainFrame(list_Class);
         frame.setResizable(true);
     }
 
