@@ -19,7 +19,7 @@ public class main2 {
         listVariable.add(x3);
 
         ClassInfor classInfor = new ClassInfor("Linh","public",null,true,null);
-        Method method = new Method("method1","int","public",true,listVariable);
+        Method method = new Method("method1",true,"public","Nguyet",listVariable);
         Attribute attribute = new Attribute("attribute1","float",null,null,true,true);
         ArrayList<Method> methods = new ArrayList<>();
         ArrayList<Attribute> attributes = new ArrayList<>();
