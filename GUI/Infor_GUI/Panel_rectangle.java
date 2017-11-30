@@ -73,21 +73,22 @@ public class Panel_rectangle extends JPanel implements InforGraphic {
     //khoi tao kich thuoc cua panel
     private void initSize(Class c) {
         int max_heigth = c.getAttributes().size()+c.getMethods().size()+2;
-        int max_width =25;
+        int max_width =15;
         if(c.getMethods().size() >0) {
             for (Method m : c.getMethods()) {
                 if(m !=null) {
-                    int l1 = m.getName().length() + m.getReturn_Type().length() + 2;
-                    if (m.getList_Variable().size() > 0) {
-                        for (Variable v : m.getList_Variable()) {
-                            l1 += v.toString().length();
-                        }
-                    }
+                    int l1 = m.toString().length();
                     if (max_width < l1) max_width = l1;
                 }
             }
-            this.setSize(max_width* SIZE_KITU, max_heigth*(DOCAOCHU + KHOANGCACHDONG));
         }
+        if(c.getAttributes().size() >0){
+            for(Attribute a : c.getAttributes()){
+                int l1 = a.toString().length();
+                if(max_width<l1) max_width=l1;
+            }
+        }
+        this.setSize(max_width* SIZE_KITU, max_heigth*(DOCAOCHU + KHOANGCACHDONG));
 
     }
 
@@ -113,15 +114,7 @@ public class Panel_rectangle extends JPanel implements InforGraphic {
             for (Attribute attribute : attributes) {
                 y += DOCAOCHU + KHOANGCACHDONG;
                 if(attribute!=null) {
-//                    if (attribute.getAccess_Modify() != null) {
-//                        if (attribute.getAccess_Modify().equals("public")) {
-//                            g2d.drawString("+", 2, y);
-//                        } else if(attribute.getAccess_Modify().equals("private")) {
-//                            g2d.drawString("-", 2, y);
-//                        } else g2d.drawString("#", 2, y);
-//                    }
-//                    g2d.drawString(attribute.getReturn_type() + " " + attribute.getName(), 10, y);
-                    g2d.drawString(attribute.toString(),10,y);
+                    g2d.drawString(attribute.toString(),8,y);
                 }
 
             }
@@ -133,27 +126,7 @@ public class Panel_rectangle extends JPanel implements InforGraphic {
             for (Method method : methods) {
                 y += DOCAOCHU + KHOANGCACHDONG;
                 if(method !=null) {
-                    if(method.getAccess_Modify()!=null) {
-                        if (method.getAccess_Modify().equals("public")) {
-                            g2d.drawString("+", 2, y);
-                        } else if(method.getAccess_Modify().equals("private")){
-                            g2d.drawString("-", 2, y);
-                        } else g2d.drawString("#", 2, y);
-
-                    }
-
-                    String method_infor = ""; //phan in ra man hinh
-                    if (method.isIs_Abstract_Method()) {
-                        method_infor = "abstract " + method_infor;
-                    }
-                    method_infor += method.getReturn_Type() + " " + method.getName() + "( ";
-                    if (method.getList_Variable() != null) {
-                        for (Variable v : method.getList_Variable()) {
-                            method_infor += v.toString() + ", ";
-                        }
-                        method_infor = method_infor.substring(0, method_infor.length() - 2) + " )";
-                    }
-                    g2d.drawString(method_infor, 10, y);
+                    g2d.drawString(method.toString(), 8, y);
                 }
             }
         }

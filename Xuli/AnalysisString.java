@@ -17,7 +17,6 @@ public class AnalysisString {
         }
         return str;
     }
-
     // cat bo ki tu "(" de lay ra ten cua method
     public String advance_fix(String str) {
         int pos = str.indexOf("(");
@@ -25,7 +24,6 @@ public class AnalysisString {
         return str;
 
     }
-
     // phan tich dong chua class
     public ClassInfor analysisClassInfor(String str) {
         String name_Class = null;
@@ -85,21 +83,104 @@ public class AnalysisString {
         if (implements_.isEmpty()) implements_ = null;
         return new ClassInfor(name_Class, access_Modify, father_Class, is_Abstract_Class, implements_);
     }
-
-    //phan tich 1 dong chua method
-    public Method AnalysisMethod(String str) {
-        String name="";
-        String return_Type="";
-        String access_Modify = "default";
+    // phan tich cac bien trong phuong thuc
+    public Method analysisMethod(String str, String name_Class) {
+        String access_Modify = null;
         boolean is_Abstract_Method = false;
-        ArrayList<Variable> list_Variable = new ArrayList<>();
+        String return_Type = null;
+        String name = null;
+        ArrayList<Variable> list_Variable = null;
 
+        boolean is_Contructor =false;
+        if(str.indexOf(name_Class) >= 0) is_Contructor=true;
 
+        if(str.indexOf("static ") >0){  //cat bo chu static
+            int index = str.indexOf("static ");
+            String temp= str.substring(0,index)+str.substring(index+7,str.length());
+            str=temp;
+        }
+        String[] list = str.split("\\s");
+        if (str.indexOf("abstract") > 0)
+            is_Abstract_Method = true;
 
+        String listVariable = str.substring(str.indexOf("(")+1,str.indexOf(")"));
+        if (listVariable.length()>3){
+            list_Variable=analysis_list_Variable(listVariable);
+        }
 
-        return new Method(name,return_Type,access_Modify,is_Abstract_Method,list_Variable);
+        if (list[0].equals("public") || list[0].equals("protected") || list[0].equals("private")) {
+            access_Modify = list[0];
+            if (str.indexOf("abstract") >= 0) {
+                is_Abstract_Method = true;
+                if (list[2].equals("void")) {
+                    name= advance_fix(list[3]);
+                }
+                else {
+                    return_Type= list[2];
+                    name= advance_fix(list[3]);
+                }
+            }else {
+                if (list[1].equals("void")) {
+                    name= advance_fix(list[2]);
+                }
+                else {
+                    if(is_Contructor){
+                        name =advance_fix(list[1]);
+                    }else {
+                        return_Type = list[1];
+                        name = advance_fix(list[2]);
+                    }
+                }
+            }
+            //phan tich cac variable ??????
+        }else { //abstract void ten();
+            access_Modify="default";
+            if (str.indexOf("abstract") >= 0) {
+                is_Abstract_Method = true;
+                if (list[1].equals("void")) {
+                    name= advance_fix(list[2]);
+                }
+                else {
+                    return_Type= list[1];
+                    name= advance_fix(list[2]);
+                }
+            }else {
+                if (list[0].equals("void")) {
+                    name= advance_fix(list[1]);
+                }
+                else {
+                    return_Type= list[0];
+                    name= advance_fix(list[1]);
+                }
+            }
+
+        }
+
+        return new Method(access_Modify, is_Abstract_Method, return_Type,name, list_Variable);
     }
-
+    //phan tich 1 dong chua method
+    public ArrayList<Variable> analysis_list_Variable(String str){  // int a, int b
+        ArrayList<Variable> result= new ArrayList<>();
+        String name;
+        String type;
+        if (str.indexOf(",") >=0){
+            String[] list = str.split(",");
+            for (int i=0; i< list.length; i++){
+                String[] list2= list[i].trim().split(" ");
+                type= list2[0];
+                name= list2[1];
+                System.out.println(name);
+                result.add( new Variable(name,type));
+            }
+        }
+        else {
+            String[] list2= str.trim().split(" ");
+            type= list2[0];
+            name= list2[1];
+            result.add(new Variable(name,type));
+        }
+        return result;
+    }
     //phan tich thuoc tinh
     public Attribute AnalysisAttribute(String str) {
         String name = null;
@@ -118,25 +199,25 @@ public class AnalysisString {
                 if (list[2].equals("final")) {
                     is_const = true;
                     return_type = list[3];
-                    name = list[4];
+                    name = simple_fix(list[4]);
                     if (list[5].equals("=")){
                         value=list[6];
                     }
 
                 } else {
                     return_type = list[2];
-                    name = list[3];
+                    name = simple_fix(list[3]);
                 }
             }
             else {//
                 if (list[1].equals("final")) {
                     is_const = true;
                     return_type = list[2];
-                    name = list[3];
+                    name = simple_fix(list[3]);
                     value = list[5];
                 } else {
                     return_type = list[1];
-                    name = list[2];
+                    name = simple_fix(list[2]);
                 }
             }
         }
@@ -146,12 +227,12 @@ public class AnalysisString {
                 if (list[1].equals("final")) {
                     is_const = true;
                     return_type = list[2];
-                    name = list[3];
+                    name = simple_fix(list[3]);
                     value = list[5];
                 }
                 else {
                     return_type = list[1];
-                    name = list[2];
+                    name = simple_fix(list[2]);
                     value= list[4];
                 }
             }
@@ -159,12 +240,12 @@ public class AnalysisString {
                 if (list[0].equals("final")) {
                     is_const = true;
                     return_type = list[1];
-                    name = list[2];
+                    name = simple_fix(list[2]);
                     value = list[4];
                 }
                 else {
                     return_type = list[0];
-                    name = list[1];
+                    name = simple_fix(list[1]);
                     value= list[3];
                 }
             }
@@ -173,6 +254,4 @@ public class AnalysisString {
         return new Attribute(name,return_type,access_Modify,value,is_Attribute_Property,is_const);
 
     }
-
-    //return
 }

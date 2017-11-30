@@ -46,14 +46,35 @@ public class Attribute {
 
     @Override
     public String toString() {
-        return "Attribute{" +
-                "name='" + name + '\'' +
-                ", value='" + value + '\'' +
-                ", return_type='" + return_type + '\'' +
-                ", access_Modify='" + access_Modify + '\'' +
-                ", is_Attribute_Property=" + is_Attribute_Property +
-                ", is_const=" + is_const +
-                '}';
+        String result = "";
+        if(access_Modify!=null) {
+            if (this.access_Modify.equals("public")) {
+                result = result + "+ ";
+            }
+
+            if (this.access_Modify.equals("protected")) {
+                result = result + "# ";
+            }
+
+            if (this.access_Modify.equals("private")) {
+                result = result + "- ";
+            }
+        }else {
+            result+="~ ";
+        }
+
+        result = result + this.name;
+        if (value!= null){
+            result = result + " = ";
+            result = result + this.value;
+        }
+        result = result + " : ";
+        result = result + this.return_type + " ";
+        if (this.is_Attribute_Property)
+            result = result + "static" + " ";
+        if (this.is_const)
+            result = result + "final"+ " ";
+        return result;
     }
 
 }

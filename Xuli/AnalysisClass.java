@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 
 public class AnalysisClass {
-    int check_braces = 0; // bien de kiem tra xem str dang phan tich co o trong 1 method khong dua vao "{" vaf "}", hoat dong giong stack
+    int check_braces = 0; // bien de kiem tra xem str dang phan tich co o trong 1 method khong dua vao "{" va "}", hoat dong giong stack
 
     //xoa bo phan thua trong 1 dong
     public static String fix_Line(String str) {
@@ -23,12 +23,12 @@ public class AnalysisClass {
         if (str.startsWith("package")) return null;
         if (str.indexOf(";") < 0 && str.indexOf("{") < 0 && str.indexOf("}") < 0) return null;
 
-        while ((pos = str.indexOf("/*")) > 0) {// vi tri dau xuat hien cua /*
+        while ((pos = str.indexOf("/*")) >=0) {// vi tri dau xuat hien cua /*
             pos2 = str.indexOf("*/");
             str = str.substring(0, pos) + str.substring(pos2 + 2, str.length()).trim();
         }// cat lay hai doan ngoai cmt
 
-        if ((pos = str.indexOf("//")) > 0) str = str.substring(0, pos).trim();
+        if ((pos = str.indexOf("//")) >= 0) str = str.substring(0, pos).trim();
 
         return str;
     }
@@ -64,7 +64,7 @@ public class AnalysisClass {
                 if (str == null) continue;
                 if (is_In_Method(str) == true) continue;  // neu la 1 dong trong method thi xet luon dong tiep theo
 
-                if (str.indexOf(" class ") > 0) {
+                if (str.indexOf(" class ") >= 0) {
                     System.out.println("class: " + str);
                     classInfor = dataTo.analysisClassInfor(str);
                     continue;
@@ -76,7 +76,7 @@ public class AnalysisClass {
                         continue;
                     } else {
                         System.out.println("method: " + str);
-                        methods.add(dataTo.AnalysisMethod(str));
+                        methods.add(dataTo.analysisMethod(str,classInfor.getName_class()));
                         continue;
                     }
 
