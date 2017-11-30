@@ -6,6 +6,8 @@ import Infor.Method;
 import Infor.Variable;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AnalysisString {
     //ham cat bo ki tu thua  "{"   ","    ";"
@@ -24,65 +26,53 @@ public class AnalysisString {
         return str;
 
     }
+
     // phan tich dong chua class
-    public ClassInfor analysisClassInfor(String str) {
-        String name_Class = null;
-        String access_Modify = null;
-        String father_Class = null;
-        boolean is_Abstract_Class = false;
-        ArrayList<String> implements_ = new ArrayList<>();
+    public ClassInfor analysisClassInfor(String str){
+        String name_class=null;
+        String access_Modify=null;
+        String father_Class=null;
+        boolean is_Abstract_Class=false;
+        ArrayList<String> implements_= new ArrayList<>();
 
-        if ((" " + str).indexOf(" abstract ") >= 0) is_Abstract_Class = true;
 
-        String[] list = str.split(" ");
+        String regex = "(?<accessmodify>(public|protected|private)\\s+)?(?<isABS>abstract\\s+)?(class\\s+)(?<name>\\w+\\s+)(?<implements>implements\\s+(\\w+\\s*\\,+\\s*)+\\w+\\s+)?" +
+                "((extends\\s+)(?<fartherClass>\\w+\\s*))?(?<implements2>implements\\s+(\\w+\\s*\\,+\\s*)+\\w+\\s+)?";
 
-        if (is_Abstract_Class) {
-            //2 truong hop "abstract class X" va "public abstract class X"
-            if (list[0].equals("abstract")) {
-                name_Class = list[2];
-                access_Modify = "public";
-            } else {
-                access_Modify = list[0];
-                name_Class = list[3];
+
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+
+        while (matcher.find()) {
+            name_class=matcher.group("name");
+            access_Modify=matcher.group("accessmodify");
+            father_Class=matcher.group("fartherClass");
+            if(matcher.group("isABS") != null) is_Abstract_Class =true;
+            String string = matcher.group("implements");
+            if (string!= null){
+                implements_= analysis_implement(string);
             }
-        } else {
-            // 2 truong hop " <acess modify> class X" va "class X"
-            if (list[1].equals("class")) {
-                access_Modify = list[0];
-                name_Class = list[2];
-            } else {
-                access_Modify = "default";
-                name_Class = list[1];
-            }
-        }
-
-        for (int i = 2; i < list.length; i++) {
-            if (list[i].equals("extends")) {
-                father_Class = list[i + 1];
-                //i++;
-            }
-
-            if (list[i].equals("implements")) {
-                for (int j = i + 1; j < list.length; j++) {
-                    if (list[j].equals("extends")) break;
-
-                    if (!list[j].equals("{") && !list[j].equals(",")) {
-
-                        String temp = simple_fix(list[j]);
-                        if (temp.indexOf(",") > 0) {  // truong hop "implements X,Y"   => se cat ra X va Y rieng
-                            for (String s : temp.split(",")) {
-                                implements_.add(s);
-                            }
-                        } else implements_.add(temp);
-                        i++;
-                    }
-                }
+            string = matcher.group("implements2");
+            if (string!= null){
+                implements_= analysis_implement(string);
             }
         }
 
-        if (implements_.isEmpty()) implements_ = null;
-        return new ClassInfor(name_Class, access_Modify, father_Class, is_Abstract_Class, implements_);
+
+        return new ClassInfor(name_class,access_Modify,father_Class,is_Abstract_Class,implements_);
     }
+    //phan tich implement
+    public ArrayList<String> analysis_implement( String str){
+        ArrayList<String> implements_= new ArrayList<>();
+        int i= str.indexOf("implements");
+        String temp= str.substring(i+10, str.length());
+        String[] list= temp.split(",");
+        for (int j=0; j< list.length; j++){
+            implements_.add(list[j].trim());
+        }
+        return implements_;
+    }
+
     // phan tich cac bien trong phuong thuc
     public Method analysisMethod(String str, String name_Class) {
         String access_Modify = null;
@@ -181,6 +171,7 @@ public class AnalysisString {
         }
         return result;
     }
+
     //phan tich thuoc tinh
     public Attribute AnalysisAttribute(String str) {
         String name = null;
@@ -190,7 +181,6 @@ public class AnalysisString {
         boolean is_Attribute_Property = false;
         boolean is_const = false;
 
-        //int x = str.indexOf("static");// public int a = 7;
         String[] list = str.split(" ");
         if (list[0].equals("public") || list[0].equals("protected") || list[0].equals("private")) {
             access_Modify= list[0];

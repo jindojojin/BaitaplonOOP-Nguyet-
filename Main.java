@@ -29,6 +29,4 @@ public class Main {
         MainFrame frame =new MainFrame(list_Class);
         frame.setResizable(true);
     }
-
-
 }

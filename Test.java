@@ -1,3 +1,7 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import Infor.ClassInfor;
 import Infor.Method;
 import Infor.Variable;
 
@@ -25,6 +29,9 @@ public class Test {
         System.out.println(d.toString());
         System.out.println(e.toString());
         System.out.println(f.toString());
+
+
+        System.out.println(t.analysisClassInfor("public abstract class A extends B implements C,D, E "));
 
     }
 
@@ -65,7 +72,7 @@ public class Test {
         }
         String[] list = str.split("\\s");
         if (str.indexOf("abstract") > 0)
-            is_Abstract_Method = true;
+        is_Abstract_Method = true;
 
         String listVariable = str.substring(str.indexOf("(")+1,str.indexOf(")"));
         if (listVariable.length()>3){
@@ -117,5 +124,50 @@ public class Test {
         }
 
         return new Method(access_Modify, is_Abstract_Method, return_Type, name, list_Variable);
+    }
+
+    public ClassInfor analysisClassInfor(String str){
+        String name_class=null;
+        String access_Modify=null;
+        String father_Class=null;
+        boolean is_Abstract_Class=false;
+        ArrayList<String> implements_= new ArrayList<>();
+
+
+        String regex = "(?<accessmodify>(public|protected|private)\\s+)?(?<isABS>abstract\\s+)?(class\\s+)(?<name>\\w+\\s+)(?<implements>implements\\s+(\\w+\\s*\\,+\\s*)+\\w+\\s+)?" +
+                "((extends\\s+)(?<fartherClass>\\w+\\s*))?(?<implements2>implements\\s+(\\w+\\s*\\,+\\s*)+\\w+\\s+)?";
+
+
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+
+        while (matcher.find()) {
+            name_class=matcher.group("name");
+            access_Modify=matcher.group("accessmodify");
+            father_Class=matcher.group("fartherClass");
+            if(matcher.group("isABS") != null) is_Abstract_Class =true;
+            String string = matcher.group("implements");
+            if (string!= null){
+                implements_= analysis_implement(string);
+            }
+            string = matcher.group("implements2");
+            if (string!= null){
+                implements_= analysis_implement(string);
+            }
+        }
+
+
+        return new ClassInfor(name_class,access_Modify,father_Class,is_Abstract_Class,implements_);
+    }
+
+    public ArrayList<String> analysis_implement( String str){
+            ArrayList<String> implements_= new ArrayList<>();
+            int i= str.indexOf("implements");
+        String temp= str.substring(i+10, str.length());
+        String[] list= temp.split(",");
+        for (int j=0; j< list.length; j++){
+            implements_.add(list[j].trim());
+        }
+        return implements_;
     }
 }

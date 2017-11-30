@@ -59,8 +59,7 @@ public class AnalysisClass {
             Scanner sc = new Scanner(file);
             while (sc.hasNextLine()) {
                 String str = fix_Line(sc.nextLine().trim());
-                // String str = sc.nextLine().trim();
-//                System.out.println(str);
+
                 if (str == null) continue;
                 if (is_In_Method(str) == true) continue;  // neu la 1 dong trong method thi xet luon dong tiep theo
 
