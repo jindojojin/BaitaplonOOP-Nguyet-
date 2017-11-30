@@ -21,7 +21,6 @@ public class MainFrame extends JFrame implements InforGraphic {
         initDiagram();
         System.out.println("da initDiagram xong");
         Label paper = new Label(listRec);
-        paper.setIcon(new ImageIcon("GUI/Infor_GUI/pexels-photo-220071.jpeg"));
         scrollPane = new JScrollPane(paper,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         add(scrollPane);
     }

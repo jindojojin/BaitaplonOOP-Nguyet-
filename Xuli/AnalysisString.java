@@ -156,7 +156,7 @@ public class AnalysisString {
 
         }
 
-        return new Method(access_Modify, is_Abstract_Method, return_Type, name, list_Variable);
+        return new Method(access_Modify, is_Abstract_Method, return_Type,name, list_Variable);
     }
     //phan tich 1 dong chua method
     public ArrayList<Variable> analysis_list_Variable(String str){  // int a, int b

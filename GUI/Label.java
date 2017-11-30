@@ -11,15 +11,11 @@ public class Label extends JLabel implements InforGraphic {
 
     public Label(ArrayList<Panel_rectangle> list_Rec) {
         this.list_Rec = list_Rec;
+        this.setPreferredSize(new Dimension(10000,10000));
         for(Panel_rectangle rec : list_Rec){
-            add(rec);
+            this.add(rec);
         }
     }
-
-    @Override
-
-
-
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         Graphics2D g2d = (Graphics2D) graphics;

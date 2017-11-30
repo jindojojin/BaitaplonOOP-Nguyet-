@@ -81,8 +81,14 @@ public class Panel_rectangle extends JPanel implements InforGraphic {
                     if (max_width < l1) max_width = l1;
                 }
             }
-            this.setSize(max_width* SIZE_KITU, max_heigth*(DOCAOCHU + KHOANGCACHDONG));
         }
+        if(c.getAttributes().size() >0){
+            for(Attribute a : c.getAttributes()){
+                int l1 = a.toString().length();
+                if(max_width<l1) max_width=l1;
+            }
+        }
+        this.setSize(max_width* SIZE_KITU, max_heigth*(DOCAOCHU + KHOANGCACHDONG));
 
     }
 
@@ -108,7 +114,7 @@ public class Panel_rectangle extends JPanel implements InforGraphic {
             for (Attribute attribute : attributes) {
                 y += DOCAOCHU + KHOANGCACHDONG;
                 if(attribute!=null) {
-                    g2d.drawString(attribute.toString(),10,y);
+                    g2d.drawString(attribute.toString(),8,y);
                 }
 
             }
@@ -120,7 +126,7 @@ public class Panel_rectangle extends JPanel implements InforGraphic {
             for (Method method : methods) {
                 y += DOCAOCHU + KHOANGCACHDONG;
                 if(method !=null) {
-                    g2d.drawString(method.toString(), 10, y);
+                    g2d.drawString(method.toString(), 8, y);
                 }
             }
         }
