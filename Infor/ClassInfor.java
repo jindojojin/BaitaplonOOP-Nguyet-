@@ -7,7 +7,12 @@ public class ClassInfor {
     String access_Modify;
     String father_Class;
     boolean is_Abstract_Class;
+    boolean is_Interface = false;
     ArrayList<String> implements_;
+
+    public void setIs_Interface(boolean is_Interface) {
+        this.is_Interface = is_Interface;
+    }
 
     public ClassInfor(String name_class, String access_Modify, String father_Class, boolean is_Abstract_Class, ArrayList<String> implements_) {
         this.name_class = name_class;

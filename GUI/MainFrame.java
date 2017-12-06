@@ -1,7 +1,7 @@
 package GUI;
 
-import GUI.Infor_GUI.Panel_rectangle;
-import Infor.Class;
+import GUI.Infor_GUI.Khungclass;
+import Infor.ThanhPhanClass;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,23 +10,23 @@ import java.util.ArrayList;
 public class MainFrame extends JFrame implements InforGraphic {
     private JScrollPane scrollPane;
 
-    private ArrayList<Class> listClass;
-    private ArrayList<Panel_rectangle> listRec= new ArrayList<>();
+    private ArrayList<ThanhPhanClass> listThanhPhanClasses;
+    private ArrayList<Khungclass> listRec= new ArrayList<>();
 
-    public MainFrame(ArrayList<Class> listClass) throws HeadlessException{
+    public MainFrame(ArrayList<ThanhPhanClass> listThanhPhanClasses) throws HeadlessException{
         setVisible(true);
         setSize(1000,1000);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.listClass = listClass;
+        this.listThanhPhanClasses = listThanhPhanClasses;
         initDiagram();
         System.out.println("da initDiagram xong");
-        Label paper = new Label(listRec);
+        MainLabel paper = new MainLabel(listRec);
         scrollPane = new JScrollPane(paper,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         add(scrollPane);
     }
 
 
-    public ArrayList<Panel_rectangle> getListRec() {
+    public ArrayList<Khungclass> getListRec() {
         return listRec;
     }
 
@@ -36,17 +36,17 @@ public class MainFrame extends JFrame implements InforGraphic {
 
     public void initDiagram() {
         boolean flagLevel = false;
-        System.out.println("da vao MainFrame.initDiagram");
+        //System.out.println("da vao MainFrame.initDiagram");
         for(int i=0;;i++){  // duyet tat ca cac level
-            for(Class c : listClass){
+            for(ThanhPhanClass c : listThanhPhanClasses){
                 if(c.level == i){
                     flagLevel= true; //danh dau la ton tai class o level nay
-                    Panel_rectangle newPanelRectangle = new Panel_rectangle(c,last_X,last_Y);
+                    Khungclass newPanelRectangle = new Khungclass(c,last_X,last_Y);
                     if(c.level >0) {
-                        for (Panel_rectangle panel_rectangle : listRec) {  // duyet tat ca cac panel o tren de tim panel dai dien cho lop cha
-                            if (panel_rectangle.getExpressionClass().isFatherClass) {
-                                if (c.getClassInfor().getFather_Class().equals(panel_rectangle.getExpressionClass().getClassInfor().getName_class())) {
-                                    newPanelRectangle.setFather_PanelRectangfle(panel_rectangle);
+                        for (Khungclass khungclass : listRec) {  // duyet tat ca cac panel o tren de tim panel dai dien cho lop cha
+                            if (khungclass.getExpressionThanhPhanClass().isFatherClass) {
+                                if (c.getClassInfor().getFather_Class().equals(khungclass.getExpressionThanhPhanClass().getClassInfor().getName_class())) {
+                                    newPanelRectangle.setFather_PanelRectangfle(khungclass);
                                 }
                             }
                         }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by DELL on 11/7/2017.
  */
-public class Class {
+public class ThanhPhanClass {
     public int level =0;
     public boolean isFatherClass = false;
 
@@ -13,7 +13,7 @@ public class Class {
     ArrayList<Attribute> attributes;
     ArrayList<Method> methods;
 
-    public Class(ClassInfor classInfor, ArrayList<Attribute> attributes, ArrayList<Method> methods) {
+    public ThanhPhanClass(ClassInfor classInfor, ArrayList<Attribute> attributes, ArrayList<Method> methods) {
         this.classInfor = classInfor;
         this.attributes = attributes;
         this.methods = methods;
@@ -33,7 +33,7 @@ public class Class {
 
     @Override
     public String toString() {
-        return "Class{" +
+        return "ThanhPhanClass{" +
                 "classInfor=" + classInfor +
                 ", attributes=" + attributes +
                 ", methods=" + methods +

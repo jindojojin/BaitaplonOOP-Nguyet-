@@ -1,11 +1,10 @@
 package Xuli;
 
 import Infor.Attribute;
-import Infor.Class;
+import Infor.ThanhPhanClass;
 import Infor.ClassInfor;
 import Infor.Method;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -23,10 +22,10 @@ public class AnalysisClass {
         if (str.startsWith("package")) return null;
         if (str.indexOf(";") < 0 && str.indexOf("{") < 0 && str.indexOf("}") < 0) return null;
 
-        while ((pos = str.indexOf("/*")) >=0) {// vi tri dau xuat hien cua /*
-            pos2 = str.indexOf("*/");
-            str = str.substring(0, pos) + str.substring(pos2 + 2, str.length()).trim();
-        }// cat lay hai doan ngoai cmt
+//        while ((pos = str.indexOf("/*")) >=0) {// vi tri dau xuat hien cua /*
+//            pos2 = str.indexOf("*/");
+//            str = str.substring(0, pos) + str.substring(pos2 + 2, str.length()).trim();
+//        }// cat lay hai doan ngoai cmt
 
         if ((pos = str.indexOf("//")) >= 0) str = str.substring(0, pos).trim();
 
@@ -45,10 +44,10 @@ public class AnalysisClass {
         return false;
     }
 
-    //phan tich file
-    public Class analysis(File file) {
-        System.out.println("Davaoday");
-
+    //phan tich cac thanh phan trong mot class
+    public ThanhPhanClass analysis(java.io.File file) {
+        System.out.println("Da vao AnalysisClass");
+        boolean is_Inteface=false;
         ClassInfor classInfor = null;
         ArrayList<Method> methods = new ArrayList<>();
         ArrayList<Attribute> attributes = new ArrayList<>();
@@ -63,30 +62,37 @@ public class AnalysisClass {
                 if (str == null) continue;
                 if (is_In_Method(str) == true) continue;  // neu la 1 dong trong method thi xet luon dong tiep theo
 
-                if (str.indexOf(" class ") >= 0) {
-                    System.out.println("class: " + str);
-                    classInfor = dataTo.analysisClassInfor(str);
-                    continue;
-                } else {
-                    if (str.indexOf("{") < 0) {
-                        if (str.equals("}")) continue;
-                        System.out.println("attribute: " + str);
-                        attributes.add(dataTo.AnalysisAttribute(str));
+                    if (str.indexOf(" class ") >= 0 || str.indexOf(" interface ")>=0 ) {
+                        if (str.indexOf(" interface ")>=0){
+                            is_Inteface = true;
+                        }
+                            //System.out.println("class: " + str);
+                        classInfor = dataTo.analysisClassInfor(str);
                         continue;
                     } else {
-                        System.out.println("method: " + str);
-                        methods.add(dataTo.analysisMethod(str,classInfor.getName_class()));
-                        continue;
+                        if (str.indexOf("{") < 0) {// khong co { thi la thuoc tinh
+                            if (str.equals("}"))
+                                continue;// truong hop doc duoc dau } ( ket thuc thi tiep tuc phan tich dong tiep theo
+                            //System.out.println("attribute: " + str);
+                            attributes.add(dataTo.AnalysisAttribute(str));
+                            continue;
+                        } else {
+                            //System.out.println("method: " + str);
+                            methods.add(dataTo.analysisMethod(str, classInfor.getName_class()));
+                            continue;
+                        }
+
                     }
 
-                }
             }
 
         } catch (FileNotFoundException e) {
-            System.out.println("Khong tim thay file");
+            System.out.println("Khong tim thay thanhPhanClass");
         }
 
-        return new Class(classInfor, attributes, methods);
+        ThanhPhanClass thanhPhanClass = new ThanhPhanClass(classInfor, attributes, methods);
+        if(is_Inteface == true) thanhPhanClass.getClassInfor().setIs_Interface(true);
+        return thanhPhanClass;
 
     }
 

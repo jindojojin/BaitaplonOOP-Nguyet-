@@ -29,6 +29,7 @@ new FormModel {
 					name: "button1"
 					"text": "CHON DUONG DAN"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Click_ChonDuongDan", true ) )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "chonduongdanclick", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 					"gridy": 1
 				} )
@@ -60,7 +61,7 @@ new FormModel {
 				"value": "South"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
+			"location": new java.awt.Point( 30, 35 )
 			"size": new java.awt.Dimension( 550, 190 )
 		} )
 	}

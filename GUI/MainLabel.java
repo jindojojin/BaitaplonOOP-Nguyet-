@@ -1,18 +1,18 @@
 package GUI;
 
-import GUI.Infor_GUI.Panel_rectangle;
+import GUI.Infor_GUI.Khungclass;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Label extends JLabel implements InforGraphic {
-    ArrayList<Panel_rectangle> list_Rec;
+public class MainLabel extends JLabel implements InforGraphic {
+    ArrayList<Khungclass> list_Rec;
 
-    public Label(ArrayList<Panel_rectangle> list_Rec) {
+    public MainLabel(ArrayList<Khungclass> list_Rec) {
         this.list_Rec = list_Rec;
         this.setPreferredSize(new Dimension(10000,10000));
-        for(Panel_rectangle rec : list_Rec){
+        for(Khungclass rec : list_Rec){
             this.add(rec);
         }
     }
@@ -24,9 +24,9 @@ public class Label extends JLabel implements InforGraphic {
     }
 
     public void drawLine(Graphics2D g){
-        for (Panel_rectangle rec : list_Rec){
+        for (Khungclass rec : list_Rec){
             if(rec.getFather_PanelRectangfle() != null){
-                Panel_rectangle father = rec.getFather_PanelRectangfle();
+                Khungclass father = rec.getFather_PanelRectangfle();
                 g.drawLine(rec.getX_top(),rec.getY_top(),rec.getX_top(),rec.getY_top()-KHOANGCACH/2);
                 g.drawLine(rec.getX_top(),rec.getY_top()-KHOANGCACH/2,father.getX_button(),rec.getY_top()-KHOANGCACH/2);
                 g.drawLine(father.getX_button(),rec.getY_top()-KHOANGCACH/2,father.getX_button(),father.getY_button());

@@ -4,13 +4,13 @@
 
 package GUI;
 
-import Infor.Class;
+import Infor.ThanhPhanClass;
 import Xuli.AnalysisClass;
 import Xuli.AnalysisFolder;
+import Xuli.PhanTangClass;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -21,8 +21,8 @@ import javax.swing.filechooser.FileSystemView;
  * @author Linh Tran Quang
  */
 public class ChonFile extends JFrame {
-    ArrayList<Class> list_class = new ArrayList<>(); // danh sach de luu cac class sau khi da phan tich
-    public File folder;
+    ArrayList<ThanhPhanClass> list_thanhPhanClasses = new ArrayList<>(); // danh sach de luu cac class sau khi da phan tich
+    public java.io.File folder;
     public boolean ok_button_press;
     public ChonFile() {
         initComponents();
@@ -32,8 +32,8 @@ public class ChonFile extends JFrame {
         thong_tin.setText("Nhan nut \"CHON DUONG DAN\" de mo thu muc chua chuong trinh can phan tich");
     }
 
-    public ArrayList<Class> getList_class() {
-        return list_class;
+    public ArrayList<ThanhPhanClass> getList_thanhPhanClasses() {
+        return list_thanhPhanClasses;
     }
 
     private void Click_ChonDuongDan(ActionEvent e) {
@@ -63,23 +63,35 @@ public class ChonFile extends JFrame {
         }else {
             AnalysisFolder anf = new AnalysisFolder();
             anf.lay_File_Java(folder);
-            ArrayList<File> list_java_file = anf.getList_class(); //danh sach cac file co duoi .java
+            ArrayList<java.io.File> list_java_file = anf.getList_class(); //danh sach cac file co duoi .java
             if(list_java_file.size() == 0){
                 JOptionPane.showMessageDialog(null,"Thu muc khong chua file java nao","Error!!",1);
             }else {
                 phan_tich_tung_file(list_java_file);
-                System.out.println("da bam ok");
+                //System.out.println("da bam ok");
                 setVisible(false);
                 this.ok_button_press = true;
+
+                ArrayList<ThanhPhanClass> list_ThanhPhanClasses = this.getList_thanhPhanClasses();
+                PhanTangClass p =new PhanTangClass();
+                for(ThanhPhanClass cl : list_ThanhPhanClasses) {
+                    p.setLevel(cl, list_ThanhPhanClasses);
+                }
+                for(ThanhPhanClass cls : list_ThanhPhanClasses){
+                    System.out.println(cls.getClassInfor().getName_class()+": "+cls.level);
+                }
+                System.out.println("Da vao phan cap class");
+                MainFrame frame =new MainFrame(list_ThanhPhanClasses);
+                frame.setResizable(true);
 
             }
         }
     }
     //        phan tich cac file .java
-    private void phan_tich_tung_file(ArrayList<File> list_java_file) {
+    private void phan_tich_tung_file(ArrayList<java.io.File> list_java_file) {
         AnalysisClass phan_tich_file_java = new AnalysisClass();
-        for (File file : list_java_file) {
-            list_class.add(phan_tich_file_java.analysis(file));
+        for (java.io.File file : list_java_file) {
+            list_thanhPhanClasses.add(phan_tich_file_java.analysis(file));
         }
     }
 
@@ -88,9 +100,13 @@ public class ChonFile extends JFrame {
         JOptionPane.showMessageDialog(null,"Chua hoan thien chuc nang nay","Error!!",1);
     }
 
+    private void chonduongdanclick(ActionEvent e) {
+        // TODO add your code here
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Linh Tran Quang
+        // Generated using JFormDesigner Evaluation license - Nguyet Tran
         contentPanel = new JPanel();
         thong_tin = new JLabel();
         buttonBar = new JPanel();
@@ -142,7 +158,10 @@ public class ChonFile extends JFrame {
 
             //---- button1 ----
             button1.setText("CHON DUONG DAN");
-            button1.addActionListener(e -> Click_ChonDuongDan(e));
+            button1.addActionListener(e -> {
+			Click_ChonDuongDan(e);
+			chonduongdanclick(e);
+		});
             buttonBar.add(button1, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
                 GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                 new Insets(0, 0, 5, 5), 0, 0));
@@ -175,7 +194,7 @@ public class ChonFile extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Linh Tran Quang
+    // Generated using JFormDesigner Evaluation license - Nguyet Tran
     private JPanel contentPanel;
     private JLabel thong_tin;
     private JPanel buttonBar;

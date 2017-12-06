@@ -36,9 +36,7 @@ public class AnalysisString {
         ArrayList<String> implements_= new ArrayList<>();
 
 
-        String regex = "(?<accessmodify>(public|protected|private)\\s+)?(?<isABS>abstract\\s+)?(class\\s+)(?<name>\\w+\\s+)(?<implements>implements\\s+(\\w+\\s*\\,+\\s*)+\\w+\\s+)?" +
-                "((extends\\s+)(?<fartherClass>\\w+\\s*))?(?<implements2>implements\\s+(\\w+\\s*\\,+\\s*)+\\w+\\s+)?";
-
+        String regex = "(?<accessmodify>p\\w*\\s+)?(?<isABS>(abstract\\s+))?(?<isITF>interface\\s+)?(class\\s+)?(?<name>\\w+\\s+)(?<implements>implements\\s+(\\w+\\s*\\,*\\s*)+)?(extends\\s+(?<fartherClass>\\w+\\s*))?(?<implements2>implements\\s+(\\w+\\s*\\,*\\s*)+)?";
 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(str);
@@ -148,7 +146,7 @@ public class AnalysisString {
 
         return new Method(access_Modify, is_Abstract_Method, return_Type,name, list_Variable);
     }
-    //phan tich 1 dong chua method
+    //phan tich bien truyen vao phuong thuc.
     public ArrayList<Variable> analysis_list_Variable(String str){  // int a, int b
         ArrayList<Variable> result= new ArrayList<>();
         String name;
@@ -236,7 +234,9 @@ public class AnalysisString {
                 else {
                     return_type = list[0];
                     name = simple_fix(list[1]);
-                    value= list[3];
+                    if(list.length>=4){
+                        value= list[3];
+                    }
                 }
             }
         }
