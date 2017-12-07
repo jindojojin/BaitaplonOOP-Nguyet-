@@ -48,15 +48,15 @@ public class Attribute {
     public String toString() {
         String result = "";
         if(access_Modify!=null) {
-            if (this.access_Modify.equals("public")) {
+            if (this.access_Modify.trim().equals("public")) {
                 result = result + "+ ";
             }
 
-            if (this.access_Modify.equals("protected")) {
+            if (this.access_Modify.trim().equals("protected")) {
                 result = result + "# ";
             }
 
-            if (this.access_Modify.equals("private")) {
+            if (this.access_Modify.trim().equals("private")) {
                 result = result + "- ";
             }
         }else {

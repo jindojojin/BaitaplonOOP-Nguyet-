@@ -7,18 +7,19 @@ public class ClassInfor {
     String access_Modify;
     String father_Class;
     boolean is_Abstract_Class;
-    boolean is_Interface = false;
+    public boolean is_Interface = false;
     ArrayList<String> implements_;
 
     public void setIs_Interface(boolean is_Interface) {
         this.is_Interface = is_Interface;
     }
 
-    public ClassInfor(String name_class, String access_Modify, String father_Class, boolean is_Abstract_Class, ArrayList<String> implements_) {
+    public ClassInfor(String name_class, String access_Modify, String father_Class, boolean is_Abstract_Class, boolean is_Interface, ArrayList<String> implements_) {
         this.name_class = name_class;
         this.access_Modify = access_Modify;
         this.father_Class = father_Class;
         this.is_Abstract_Class = is_Abstract_Class;
+        this.is_Interface = is_Interface;
         this.implements_ = implements_;
     }
 

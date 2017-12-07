@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 public class PhanTangClass {
 
-    public void setLevel(ThanhPhanClass cl, ArrayList<ThanhPhanClass> listThanhPhanClasses){
-
+    public void setLevel(ThanhPhanClass cl, ArrayList <ThanhPhanClass> listThanhPhanClasses){
+        for (ThanhPhanClass cll : listThanhPhanClasses){
+            System.out.println(cll);
+        }
         for(ThanhPhanClass cl2 : listThanhPhanClasses){
             if(cl2.getClassInfor().getFather_Class() != null) {
                 if (cl2.getClassInfor().getFather_Class().equals(cl.getClassInfor().getName_class())) {

@@ -1,6 +1,5 @@
-package GUI.Infor_GUI;
+package GUI;
 
-import GUI.InforGraphic;
 import Infor.*;
 import Infor.ThanhPhanClass;
 
@@ -32,15 +31,15 @@ public class Khungclass extends JPanel implements InforGraphic {
     public int getY_button() {
         return y_button;
     }
-    Khungclass father_PanelRectangfle =null;
-    public Khungclass getFather_PanelRectangfle() {
-        return father_PanelRectangfle;
+    Khungclass khungClassCha =null;
+    public Khungclass getKhungClassCha() {
+        return khungClassCha;
     }
 
-    public void setFather_PanelRectangfle(Khungclass father_PanelRectangfle) {
-        this.father_PanelRectangfle = father_PanelRectangfle;
+    public void setKhungClassCha(Khungclass khungClassCha) {
+        this.khungClassCha = khungClassCha;
     }
-    ThanhPhanClass expressionThanhPhanClass;// file the hien tren khung
+    ThanhPhanClass expressionThanhPhanClass;
     public ThanhPhanClass getExpressionThanhPhanClass() {
         return expressionThanhPhanClass;
     }
@@ -57,6 +56,7 @@ public class Khungclass extends JPanel implements InforGraphic {
         setLayout(null);
         setBackground(Color.LIGHT_GRAY);
         name_of_class = c.getClassInfor().getName_class();
+        if(c.getClassInfor().is_Interface) {name_of_class+=" (interface)";}
         methods= c.getMethods();
         attributes=c.getAttributes();
         //System.out.println("Da vao contructor cua Khungclass");

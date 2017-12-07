@@ -1,7 +1,5 @@
 package GUI;
 
-import GUI.Infor_GUI.Khungclass;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -23,10 +21,11 @@ public class MainLabel extends JLabel implements InforGraphic {
 
     }
 
+    //ve cac duong noi class
     public void drawLine(Graphics2D g){
         for (Khungclass rec : list_Rec){
-            if(rec.getFather_PanelRectangfle() != null){
-                Khungclass father = rec.getFather_PanelRectangfle();
+            if(rec.getKhungClassCha() != null){
+                Khungclass father = rec.getKhungClassCha();
                 g.drawLine(rec.getX_top(),rec.getY_top(),rec.getX_top(),rec.getY_top()-KHOANGCACH/2);
                 g.drawLine(rec.getX_top(),rec.getY_top()-KHOANGCACH/2,father.getX_button(),rec.getY_top()-KHOANGCACH/2);
                 g.drawLine(father.getX_button(),rec.getY_top()-KHOANGCACH/2,father.getX_button(),father.getY_button());

@@ -61,22 +61,23 @@ public class Method {
     @Override
     public String toString() {
         String result="";
-        if(access_Modify.equals("public")){
-            result+="+ ";
-        }
-        if(access_Modify.equals("private")){
-            result +="- ";
-        }
-        if(access_Modify.equals("protected")){
-            result+="# ";
-        }
-        if(access_Modify.equals("default")){
+        if(access_Modify == null){
             result+="~ ";
+        }else {
+            if (access_Modify.trim().equals("public")) {
+                result += "+ ";
+            }
+            if (access_Modify.trim().equals("private")) {
+                result += "- ";
+            }
+            if (access_Modify.trim().equals("protected")) {
+                result += "# ";
+            }
         }
         if(is_Abstract_Method){
             result+= "abstract ";
         }
-        result+= name+"( ";
+        result+= name+" (";
         if(list_Variable != null) {
             for (Variable v : list_Variable) {
                 result += v.type + ", ";
